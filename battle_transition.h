@@ -1,34 +1,47 @@
 #pragma once
 
-#include "global.h"
+#include "../global.h"
+#include "../pokemon.h"
 
-//Exported Constants
-enum // TRANSITION_MUGSHOT
+/**
+ * \file battle_transition.h
+ * \brief Contains functions relating to the transition from the Oveworld to battles.
+ *		  Mainly focuses on trainer mugshots.
+ */
+
+//Functions Hooked In
+bool8 BT_Phase2Mugshot_LoadGfx(struct Task* task);
+void Mugshots_CreateOpponentPlayerSprites(struct Task* task);
+bool8 BT_Phase2Mugshot_StartSpriteSlide(struct Task* task);
+bool8 BT_Phase2Mugshot_WaitForOpponentInPlace(struct Task *task);
+bool8 BT_Phase2Mugshot_StartBlackFade(struct Task *task);
+bool8 ShiftTrainerMugshotSprite(struct Sprite *sprite);
+
+//Exported Data Structures
+struct BattleTransitionLogo
 {
-    MUGSHOT_LORELEI,
-    MUGSHOT_BRUNO,
-    MUGSHOT_AGATHA,
-    MUGSHOT_LANCE,
-    MUGSHOT_CHAMPION,
-    MUGSHOTS_COUNT
+	u8 trainerClass;
+	const u8* tiles;
+	const u16* pal;
+	const u8* map;
 };
 
-#define B_TRANSITION_BLUR 0 //Checkers
-#define B_TRANSITION_DISTORTED_WAVE 1 //Wavy
-#define B_TRANSITION_HORIZONTAL_CORRUGATE 2 //Ripple
-#define B_TRANSITION_BIG_POKEBALL 3
-#define B_TRANSITION_SLIDING_POKEBALLS 4
-#define B_TRANSITION_CLOCKWISE_BLACKFADE 5
-#define B_TRANSITION_FULLSCREEN_WAVE 6
-#define B_TRANSITION_BLACK_WAVE_TO_RIGHT 7 //Wave washes over screen
-#define B_TRANSITION_SLICED_SCREEN 8 //The screen is chopped into slices
-#define B_TRANSITION_WHITEFADE_IN_STRIPES 9
-#define B_TRANSITION_GRID_SQUARES 10
-#define B_TRANSITION_BLACK_DOODLES 11
-#define B_TRANSITION_LORELEI 12
-#define B_TRANSITION_BRUNO 13
-#define B_TRANSITION_AGATHA 14
-#define B_TRANSITION_LANCE 15
-#define B_TRANSITION_CHAMPION 16
-#define B_TRANSITION_ANTI_CLOCKWISE_SPIRAL 17
-#define B_TRANSITION_CUSTOM_LOGO 18
+extern const struct BattleTransitionLogo gBattleTransitionLogos[];
+extern const u8 gNumBattleTransitionLogos;
+
+//Exported Constants
+
+//VAR_PRE_BATTLE_MUGSHOT_STYLE
+enum
+{
+    MUGSHOT_BIG = 0,
+    MUGSHOT_DP,
+    MUGSHOT_TWO_BARS,
+};
+
+//VAR_PRE_BATTLE_MUGSHOT_SPRITE
+enum
+{
+    MUGSHOT_PLAYER = 0,
+    MUGSHOT_VS_SYMBOL,
+};

@@ -1,112 +1,84 @@
 #pragma once
 
-#include "global.h"
+#include "../global.h"
+/**
+ * \file overworld.h
+ * \brief Contains functions relating to the things that happen in the overworld. This
+ *	      includes trainers spotting the player for battle (including two at a time),
+ *		  the player facing trainers before battle, scripts that run on every step,
+ *		  scripts that run on every frame (like Swarm checks), updated whiteout
+ *		  logic, Player running logic, and OW poison features.
+ */
 
-#define LINK_KEY_CODE_NULL 0x00
-#define LINK_KEY_CODE_EMPTY 0x11
-#define LINK_KEY_CODE_DPAD_DOWN 0x12
-#define LINK_KEY_CODE_DPAD_UP 0x13
-#define LINK_KEY_CODE_DPAD_LEFT 0x14
-#define LINK_KEY_CODE_DPAD_RIGHT 0x15
-#define LINK_KEY_CODE_UNK_2 0x16
-#define LINK_KEY_CODE_EXIT_ROOM 0x17
-#define LINK_KEY_CODE_START_BUTTON 0x18
-#define LINK_KEY_CODE_A_BUTTON 0x19
-#define LINK_KEY_CODE_UNK_4 0x1A // I'd guess this is the B button?
+//Exported Functions
+const u8* BattleSetup_ConfigureTrainerBattle(const u8* data);
+bool8 IsTrainerBattleModeAgainstTwoOpponents(void);
+bool8 IsTrainerBattleModeWithPartner(void);
+void AllowTrainerIncrementation(void);
+void MoveSecondNPCForTwoOpponentSighting(void);
+void LoadProperIntroSpeechForTwoOpponentSighting(void);
+void PrepTrainerB(void);
+void HasOneTrainerBeenDefeated(void);
+void MoveCameraToTrainerB(void);
+void TrainerFaceFix(void);
+void FollowerPositionFix(u8 offset);
+bool8 IsAutoRunEnabled(void);
+bool8 IsRunningDisallowed(u8 tile);
+bool8 IsCurrentAreaVolcano(void);
+bool8 IsCurrentAreaAutumn(void);
+bool8 IsCurrentAreaWinter(void);
+bool8 IsCurrentAreaDesert(void);
+bool8 IsCurrentAreaSwamp(void);
+bool8 IsCurrentAreaDarkerCave(void);
+bool8 InTanobyRuins(void);
+void PlayGrassFootstepNoise(void);
+void PlaySandFootstepNoise(void);
+const u8* LoadProperWhiteoutString(const u8* string);
+bool8 IsPlayerSurfingNorthOrSouth(void);
+bool8 IsPlayerFacingRockClimbableWall(void);
+void ShouldRockClimbContinue(void);
+void ShouldRockClimbContinueDiagonally(void);
+u8 PartyHasMonWithFieldMovePotential(u16 move, u16 item, u8 surfingType);
+void UseRegisteredItem(u16 registeredItem);
+void TryLoadMiningSpots(void);
+void ChooseMiningSpotToShow(void);
+void IsBestMiningSpotOutOfView(void);
+void ResetMiningSpots(void);
+bool8 IsValidMiningSpot(s16 x, s16 y);
 
-// These two are a hack to stop user input until link stuff can be
-// resolved.
-#define LINK_KEY_CODE_HANDLE_RECV_QUEUE 0x1B
-#define LINK_KEY_CODE_HANDLE_SEND_QUEUE 0x1C
-#define LINK_KEY_CODE_UNK_7 0x1D
-#define LINK_KEY_CODE_UNK_8 0x1E
+//Functions Hooked In
+u8 CheckForTrainersWantingBattle(void);
+void BattleSetup_StartTrainerBattle(void);
+const u8* GetIntroSpeechOfApproachingTrainer(void);
+const u8* GetTrainerCantBattleSpeech(void);
+void SetUpTrainerEncounterMusic(void);
+void SetTrainerFlags(void);
+bool8 TryStartStepCountScript(u16 metatileBehavior);
+bool8 TryRunOnFrameMapScript(void);
+bool8 WhiteoutLogic(void);
+bool8 IsRunningDisallowedByMetatile(u8 tile);
+bool8 Overworld_IsBikingAllowed(void);
+void MoveOnBike(u8 direction);
+s32 DoPoisonFieldEffect(void);
+void TaskRepel(u8 taskId);
+bool8 UpdateRepelCounter(void);
+const u8* GetInteractedWaterScript(u32 unused1, u8 metatileBehavior, u8 direction);
 
-#define MOVEMENT_MODE_FREE 0
-#define MOVEMENT_MODE_FROZEN 1
-#define MOVEMENT_MODE_SCRIPTED 2
-
-struct InitialPlayerAvatarState
+//Exported Constants
+enum
 {
-    u8 transitionFlags;
-    u8 direction;
+	SHOULDNT_BE_SURFING = 1,
+	SHOULD_BE_SURFING,
 };
 
-struct LinkPlayerEventObject
+//Exported Data Structures
+struct Pedometers
 {
-    u8 active;
-    u8 linkPlayerId;
-    u8 eventObjId;
-    u8 movementMode;
+	u32 alwaysActive;
+	u32 large;
+	u16 medium;
+	u8 smallOne;
+	u8 smallTwo;
 };
 
-// Exported RAM declarations
-extern struct WarpData gLastUsedWarp;
-extern struct LinkPlayerEventObject gLinkPlayerEventObjects[4];
-
-extern u16 *gBGTilemapBuffers1;
-extern u16 *gBGTilemapBuffers2;
-extern u16 *gBGTilemapBuffers3;
-extern u16 gHeldKeyCodeToSend;
-extern void (*gFieldCallback)(void);
-extern bool8 (*gFieldCallback2)(void);
-extern u8 gLocalLinkPlayerId;
-extern u8 gFieldLinkPlayerCount;
-
-// Exported ROM declarations
-extern const struct UCoords32 gDirectionToVectors[];
-
-struct MapHeader* __attribute__((long_call)) Overworld_GetMapHeaderByGroupAndId(u16 mapGroup, u16 mapNum);
-void __attribute__((long_call)) ResetInitialPlayerAvatarState(void);
-void __attribute__((long_call)) StoreInitialPlayerAvatarState(void);
-void __attribute__((long_call)) SetDefaultFlashLevel(void);
-void __attribute__((long_call)) Overworld_SetFlashLevel(s32 flashLevel);
-u8 __attribute__((long_call)) Overworld_GetFlashLevel(void);
-void __attribute__((long_call)) SetCurrentMapLayout(u16 mapLayoutId);
-u16 __attribute__((long_call)) GetLocationMusic(struct WarpData *warp);
-u16 __attribute__((long_call)) GetCurrLocationDefaultMusic(void);
-u16 __attribute__((long_call)) GetWarpDestinationMusic(void);
-void __attribute__((long_call)) Overworld_ResetMapMusic(void);
-void __attribute__((long_call)) Overworld_PlaySpecialMapMusic(void);
-void __attribute__((long_call)) Overworld_SetSavedMusic(u16 songNum);
-void __attribute__((long_call)) Overworld_ClearSavedMusic(void);
-void __attribute__((long_call)) Overworld_ChangeMusicToDefault(void);
-void __attribute__((long_call)) Overworld_ChangeMusicTo(u16 newMusic);
-u8 __attribute__((long_call)) GetMapMusicFadeoutSpeed(void);
-void __attribute__((long_call)) TryFadeOutOldMapMusic(void);
-bool8 __attribute__((long_call)) BGMusicStopped(void);
-void __attribute__((long_call)) Overworld_FadeOutMapMusic(void);
-void __attribute__((long_call)) UpdateAmbientCry(s16 *state, u16 *delayCounter);
-bool8 __attribute__((long_call)) CanMusicBeChangedOnMap(u16 songId);
-u8 __attribute__((long_call)) GetMapTypeByGroupAndId(s8 mapGroup, s8 mapNum);
-u8 __attribute__((long_call)) GetMapTypeByWarpData(struct WarpData *warp);
-u8 __attribute__((long_call)) GetCurrentMapType(void);
-u8 __attribute__((long_call)) GetLastUsedWarpMapType(void);
-bool8 __attribute__((long_call)) IsMapTypeOutdoors(u8 mapType);
-bool8 __attribute__((long_call)) Overworld_MapTypeAllowsTeleportAndFly(u8 mapType);
-bool8 __attribute__((long_call)) IsMapTypeIndoors(u8 mapType);
-u8 __attribute__((long_call)) GetSavedWarpRegionMapSectionId(void);
-u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
-u8 __attribute__((long_call)) GetCurrentMapBattleScene(void);
-void __attribute__((long_call)) CleanupOverworldWindowsAndTilemaps(void);
-bool8 __attribute__((long_call)) IsUpdateLinkStateCBActive(void);
-void __attribute__((long_call)) CB1_Overworld(void);
-void __attribute__((long_call)) CB2_OverworldBasic(void);
-void __attribute__((long_call)) CB2_Overworld(void);
-void __attribute__((long_call)) SetMainCallback1(void (*cb)(void));
-void __attribute__((long_call)) CB2_NewGame(void);
-void __attribute__((long_call)) CB2_WhiteOut(void);
-void __attribute__((long_call)) CB2_LoadMap(void);
-void __attribute__((long_call)) CB2_ReturnToField(void);
-void __attribute__((long_call)) CB2_ReturnToFieldLocal(void);
-void __attribute__((long_call)) CB2_ReturnToFieldLink(void);
-void __attribute__((long_call)) CB2_ReturnToFieldFromMultiplayer(void);
-void __attribute__((long_call)) CB2_ReturnToFieldWithOpenMenu(void);
-void __attribute__((long_call)) CB2_ReturnToFieldContinueScript(void);
-void __attribute__((long_call)) CB2_ReturnToFieldContinueScriptPlayMapMusic(void);
-void __attribute__((long_call)) SetWarpDestination(s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y);
-u8 __attribute__((long_call)) GetPlayerFacing(void);
-void __attribute__((long_call)) Overworld_SetEventObjTemplateMovementType(u8 localId, u8 movementType);
-void __attribute__((long_call)) SetContinueGameWarp(s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y);
-void __attribute__((long_call)) SetWarpData(struct WarpData *warp, s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y);
-void __attribute__((long_call)) SetEscapeWarp(s8 mapGroup, s8 mapNum, s8 warpId, s8 x, s8 y);
-const struct MapHeader* __attribute__((long_call)) GetDestinationWarpMapHeader(void);
+#define gPedometers ((struct Pedometers*) 0x203B7BC)

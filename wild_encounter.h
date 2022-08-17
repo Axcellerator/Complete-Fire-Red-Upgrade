@@ -1,55 +1,46 @@
 #pragma once
 
-#include "global.h"
+#include "../global.h"
+#include "../script.h"
 
-#define LAND_WILD_COUNT     12
-#define WATER_WILD_COUNT    5
-#define ROCK_WILD_COUNT     5
-#define FISH_WILD_COUNT     10
+/**
+ * \file wild_encounter.h
+ * \brief Contains functions relating to encountering Pokemon in the wild
+ *		  and beginning battles with wild Pokemon.
+ */
 
-struct WildPokemon
+//Exported Functions
+void CreateWildMon(u16 species, u8 level, u8 monHeaderIndex, bool8 purgeParty);
+u8 PickUnownLetter(u16 species, u8 headerIndex);
+void TryUpdateSwarm(void);
+void FishingWildEncounter(u8 rod);
+bool8 DoesCurrentMapHaveFishingMons(void);
+bool8 StandardWildEncounter(u32 currMetaTileBehavior, u16 previousMetaTileBehavior);
+bool8 TryStandardWildEncounter(u32 metatileBehavior);
+void RockSmashWildEncounter(void);
+bool8 SweetScentWildEncounter(void);
+bool8 StartRandomWildEncounter(bool8 waterMon); //Used in script specials
+void DoStandardWildBattle(void);
+void sp138_StartLegendaryBattle(void);
+bool8 ScrCmd_setwildbattle(struct ScriptContext* ctx);
+void TrySetWildDoubleBattleTypeScripted();
+species_t GetLocalWildMon(bool8* isWaterMon);
+u16 GetLocalWaterMon(void);
+const struct WildPokemonInfo* LoadProperMonsData(u8 type);
+
+//Exported COnstants
+enum
 {
-    u8 minLevel;
-    u8 maxLevel;
-    u16 species;
+	LAND_MONS_HEADER,
+	WATER_MONS_HEADER,
+	FISHING_MONS_HEADER,
+	ROCK_SMASH_MONS_HEADER,
 };
 
-struct WildPokemonInfo
-{
-   u8 encounterRate;
-   const struct WildPokemon *wildPokemon;
-};
+#define TILE_FLAG_ENCOUNTER_TILE 1
+#define TILE_FLAG_SURFABLE 2
+#define TILE_FLAG_WILD_DOUBLE 4
+#define TILE_FLAG_SHAKING 8
 
-struct WildPokemonHeader
-{
-    u8 mapGroup;
-    u8 mapNum;
-	u16 padding;
-    const struct WildPokemonInfo *landMonsInfo;
-    const struct WildPokemonInfo *waterMonsInfo;
-    const struct WildPokemonInfo *rockSmashMonsInfo;
-    const struct WildPokemonInfo *fishingMonsInfo;
-};
-
-#define gWildMonHeaders ((struct WildPokemonHeader*) *((u32*) 0x8082990))
-
-struct SwarmData
-{
-	u8 mapName;
-	u16 species;
-};
-
-u8 __attribute__((long_call)) ChooseWildMonIndex_Land(void);
-u8 __attribute__((long_call)) ChooseWildMonIndex_WaterRock(void);
-u8 __attribute__((long_call)) ChooseWildMonIndex_Fishing(u8 rod);
-bool8 __attribute__((long_call)) CanEncounterUnownInTanobyRuins(void);
-u32 __attribute__((long_call)) GenerateUnownPersonalityByLetter(u8 letter);
-//bool8 __attribute__((long_call)) DoWildEncounterRateDiceRoll(u16 encounterRate);
-bool8 __attribute__((long_call)) DoGlobalWildEncounterDiceRoll(void);
-bool8 __attribute__((long_call)) IsWildLevelAllowedByRepel(u8 level);
-void __attribute__((long_call)) ApplyFluteEncounterRateMod(u32 *encRate);
-void __attribute__((long_call)) ApplyCleanseTagEncounterRateMod(u32 *encRate);
-void __attribute__((long_call)) AddToWildEncounterRateBuff(u8 encounterRate);
-u8  __attribute__((long_call)) GetUnownLetterFromPersonality(u32 personality);
-bool8 __attribute__((long_call)) HandleWildEncounterCooldown(u32 currMetatileBehavior);
-u8 __attribute__((long_call)) GetFluteEncounterRateModType(void);
+#define ENCOUNTER_TYPE_LAND 0
+#define ENCOUNTER_TYPE_WATER 1

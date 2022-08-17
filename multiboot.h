@@ -1,23 +1,55 @@
-#ifndef GUARD_MULTIBOOT_H
-#define GUARD_MULTIBOOT_H
+#ifndef GUARD_GBA_MULTIBOOT_H
+#define GUARD_GBA_MULTIBOOT_H
 
-#include "global.h"
+#define MULTIBOOT_NCHILD        3       // Maximum number of slaves
+#define MULTIBOOT_HEADER_SIZE   0xc0    // Header size
+#define MULTIBOOT_SEND_SIZE_MIN 0x100   // Minimum transmission size
+#define MULTIBOOT_SEND_SIZE_MAX 0x40000 // Maximum transmission size
 
-#define MULTIBOOT_MASTER_INFO            0x62
-#define MULTIBOOT_CLIENT_INFO            0x72
-#define MULTIBOOT_MASTER_START_PROBE     0x61
-#define MULTIBOOT_MASTER_REQUEST_DLREADY 0x63
-#define MULTIBOOT_CLIENT_DLREADY         0x73
-#define MULTIBOOT_MASTER_START_DL        0x64
-#define MULTIBOOT_MASTER_REQUEST_CRC     0x65
-#define MULTIBOOT_CLIENT_CALC_CRC        0x74
-#define MULTIBOOT_CLIENT_CRCREADY        0x75
-#define MULTIBOOT_MASTER_VERIFY_CRC      0x66
+struct MultiBootParam
+{
+    u32 system_work[5];
+    u8 handshake_data;
+    u8 padding;
+    u16 handshake_timeout;
+    u8 probe_count;
+    u8 client_data[MULTIBOOT_NCHILD];
+    u8 palette_data;
+    u8 response_bit;
+    u8 client_bit;
+    u8 reserved1;
+    u8 *boot_srcp;
+    u8 *boot_endp;
+    u8 *masterp;
+    u8 *reserved2[MULTIBOOT_NCHILD];
+    u32 system_work2[4];
+    u8 sendflag;
+    u8 probe_target_bit;
+    u8 check_wait;
+    u8 server_type;
+};
 
-void MultiBootInit(struct MultiBootParam *mp);
-int MultiBootMain(struct MultiBootParam *mp);
-void MultiBootStartProbe(struct MultiBootParam *mp);
-void MultiBootStartMaster(struct MultiBootParam *mp, const u8 *srcp, int length, u8 palette_color, s8 palette_speed);
-int MultiBootCheckComplete(struct MultiBootParam *mp);
+#define MULTIBOOT_ERROR_04                0x04
+#define MULTIBOOT_ERROR_08                0x08
+#define MULTIBOOT_ERROR_0c                0x0c
+#define MULTIBOOT_ERROR_40                0x40
+#define MULTIBOOT_ERROR_44                0x44
+#define MULTIBOOT_ERROR_48                0x48
+#define MULTIBOOT_ERROR_4c                0x4c
+#define MULTIBOOT_ERROR_80                0x80
+#define MULTIBOOT_ERROR_84                0x84
+#define MULTIBOOT_ERROR_88                0x88
+#define MULTIBOOT_ERROR_8c                0x8c
+#define MULTIBOOT_ERROR_NO_PROBE_TARGET   0x50
+#define MULTIBOOT_ERROR_NO_DLREADY        0x60
+#define MULTIBOOT_ERROR_BOOT_FAILURE      0x70
+#define MULTIBOOT_ERROR_HANDSHAKE_FAILURE 0x71
 
-#endif // GUARD_MULTIBOOT_H
+#define MULTIBOOT_CONNECTION_CHECK_WAIT 15
+
+#define MULTIBOOT_SERVER_TYPE_NORMAL 0
+#define MULTIBOOT_SERVER_TYPE_QUICK  1
+
+#define MULTIBOOT_HANDSHAKE_TIMEOUT 400
+
+#endif // GUARD_GBA_MULTIBOOT_H

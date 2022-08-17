@@ -1,93 +1,157 @@
 #pragma once
 
-#include "global.h"
+#include "../global.h"
+#include "../pokemon.h"
 
-#define MOVE_LIMITATION_ZEROMOVE                (1 << 0)
-#define MOVE_LIMITATION_PP                      (1 << 1)
-#define MOVE_LIMITATION_DISABLED                (1 << 2)
-#define MOVE_LIMITATION_TORMENTED               (1 << 3)
-#define MOVE_LIMITATION_TAUNT                   (1 << 4)
-#define MOVE_LIMITATION_IMPRISION               (1 << 5)
+/**
+ * \file battle_util.h
+ * \brief Contains battle utility functions.
+ */
 
-#define ABILITYEFFECT_ON_SWITCHIN               0x0
-#define ABILITYEFFECT_ENDTURN                   0x1
-#define ABILITYEFFECT_MOVES_BLOCK               0x2
-#define ABILITYEFFECT_ABSORBING                 0x3
-#define ABILITYEFFECT_CONTACT                   0x4
-#define ABILITYEFFECT_IMMUNITY                  0x5
-#define ABILITYEFFECT_FORECAST                  0x6
-#define ABILITYEFFECT_SYNCHRONIZE               0x7
-#define ABILITYEFFECT_ATK_SYNCHRONIZE           0x8
-#define ABILITYEFFECT_INTIMIDATE1               0x9
-#define ABILITYEFFECT_INTIMIDATE2               0xA
-#define ABILITYEFFECT_TRACE                     0xB
-#define ABILITYEFFECT_CHECK_OTHER_SIDE          0xC
-#define ABILITYEFFECT_CHECK_BANK_SIDE           0xD
-#define ABILITYEFFECT_FIELD_SPORT               0xE
-#define ABILITYEFFECT_CHECK_FIELD_EXCEPT_BANK   0xF
-#define ABILITYEFFECT_COUNT_OTHER_SIDE          0x10
-#define ABILITYEFFECT_COUNT_BANK_SIDE           0x11
-#define ABILITYEFFECT_COUNT_ON_FIELD            0x12
-#define ABILITYEFFECT_CHECK_ON_FIELD            0x13
-#define ABILITYEFFECT_MOVES_BLOCK_PARTNER		0x14
-#define ABILITYEFFECT_SWITCH_IN_WEATHER         0xFF
+//Exported Functions
+u8 GetBankForBattleScript(u8 caseId);
+ability_t GetBankAbility(u8 bank);
+ability_t GetRecordedAbility(u8 bank);
+ability_t CopyAbility(u8 bank);
+ability_t* GetAbilityLocation(u8 bank);
+ability_t* GetAbilityLocationIgnoreNeutralizingGas(u8 bank);
+void RecordAbilityBattle(u8 bank, u8 ability);
+void ClearBattlerAbilityHistory(u8 bank);
+item_effect_t GetBankItemEffect(u8 bank);
+item_effect_t GetMonItemEffect(struct Pokemon* mon);
+item_effect_t GetRecordedItemEffect(u8 bank);
+void RecordItemEffectBattle(u8 bank, u8 itemEffect);
+void ClearBattlerItemEffectHistory(u8 bank);
+struct Pokemon* GetBankPartyData(u8 bank);
+u16 GetBaseCurrentHP(u8 bank);
+u16 GetBaseMaxHP(u8 bank);
+u8 GetBankFromPartyData(struct Pokemon* mon);
+bool8 CanHitSemiInvulnerableTarget(u8 bankAtk, u8 bankDef, u16 move);
+bool8 CheckGrounding(u8 bank);
+bool8 NonInvasiveCheckGrounding(u8 bank);
+bool8 CheckGroundingFromPartyData(struct Pokemon* mon);
+u8 ViableMonCountFromBank(u8 bank);
+u8 ViableMonCountFromBankLoadPartyRange(u8 bank);
+bool8 CheckContact(u16 move, u8 bank);
+bool8 CheckContactByMon(u16 move, struct Pokemon* mon);
+bool8 CheckHealingMove(u16 move);
+bool8 CheckSoundMove(u16 move);
+bool8 SheerForceCheck(void);
+bool8 IsOfType(u8 bank, u8 type);
+bool8 LiftProtect(u8 bank);
+bool8 ProtectsAgainstZMoves(u16 move, u8 bankAtk, u8 bankDef);
+bool8 StatsMaxed(u8 bank);
+bool8 MainStatsMaxed(u8 bank);
+bool8 StatsMinned(u8 bank);
+bool8 MainStatsMinned(u8 bank);
+bool8 AnyStatGreaterThan(u8 bank, u8 amount);
+u8 CountBoosts(u8 bank);
+u8 CheckMoveLimitations(u8 bank, u8 unusableMoves, u8 check);
+bool8 IsUnusableMove(u16 move, u8 bank, u8 check, u8 pp, u8 ability, u8 holdEffect, u16 choicedMove);
+u8 CheckMoveLimitationsFromParty(struct Pokemon* mon, u8 unusableMoves, u8 check);
+void CancelMultiTurnMoves(u8 bank);
+bool8 IsMoveRedirectedByFollowMe(u16 move, u8 bankAtk, u8 defSide);
+bool8 IsMoveRedirectionPrevented(u16 move, u8 atkAbility);
+u8 GetMoveTarget(u16 move, u8 useMoveTarget);
+bool8 IsBattlerAlive(u8 bank);
+struct Pokemon* LoadPartyRange(u8 bank, u8* firstMonId, u8* lastMonId);
+bool8 UproarWakeUpCheck(unusedArg u8 bank);
+bool8 IsUproarBeingMade(void);
+u8 GetIllusionPartyNumber(u8 bank);
+struct Pokemon* GetIllusionPartyData(u8 bank);
+bool8 BankMovedBefore(u8 bank1, u8 bank2);
+bool8 BankMovedBeforeIgnoreSwitch(u8 bank1, u8 bank2);
+bool8 IsFirstAttacker(u8 bank);
+bool8 CanTransferItem(u16 species, u16 item);
+bool8 CanFling(u16 item, u16 species, u8 ability, u8 bankOnSide, u8 embargoTimer);
+bool8 SymbiosisCanActivate(u8 giverBank, u8 receiverBank);
+bool8 CanKnockOffItem(u8 bank);
+bool8 CanKnockOffMonItem(struct Pokemon* mon, u8 side);
+bool8 IsAffectedByPowder(u8 bank);
+bool8 IsAffectedByPowderByDetails(u8 type1, u8 type2, u8 type3, u8 ability, u8 itemEffect);
+bool8 MoveIgnoresSubstitutes(u16 move, u8 atkAbility);
+bool8 MoveBlockedBySubstitute(u16 move, u8 bankAtk, u8 bankDef);
+bool8 MonMoveBlockedBySubstitute(u16 move, struct Pokemon* monAtk, u8 bankDef);
+bool8 IsMockBattle(void);
+bool8 IsMoveAffectedByParentalBond(u16 move, u8 bankAtk);
+u8 CalcMoveSplit(u8 bank, u16 move);
+u8 CalcMoveSplitFromParty(struct Pokemon* mon, u16 move);
+u8 FindMovePositionInMoveset(u16 move, u8 bank);
+bool8 MoveInMoveset(u16 move, u8 bank);
+u8 AttacksThisTurn(u8 bank, u16 move);
+bool8 IsZMove(const u16 move);
+void ResetVarsForAbilityChange(u8 bank);
+void HandleUnburdenBoost(u8 bank);
+void AddBankToPickupStack(const u8 bank);
+void RemoveBankFromPickupStack(const u8 bank);
+u8 GetTopOfPickupStackNotIncludingBank(const u8 bank);
+void RemoveScreensFromSide(const u8 side);
 
-#define ABILITY_ON_OPPOSING_FIELD(battlerId, abilityId)(AbilityBattleEffects(ABILITYEFFECT_CHECK_OTHER_SIDE, battlerId, abilityId, 0, 0))
-#define ABILITY_ON_FIELD(abilityId)(AbilityBattleEffects(ABILITYEFFECT_CHECK_ON_FIELD, 0, abilityId, 0, 0))
-#define ABILITY_ON_FIELD2(abilityId)(AbilityBattleEffects(ABILITYEFFECT_FIELD_SPORT, 0, abilityId, 0, 0))
+void ClearBankStatus(u8 bank);
+bool8 DoesSleepClausePrevent(u8 bank);
+bool8 CanBeGeneralStatused(u8 bank, bool8 checkFlowerVeil);
+bool8 CanBePutToSleep(u8 bank, bool8 checkFlowerVeil);
+bool8 CanBeYawned(u8 bank);
+bool8 CanBePoisoned(u8 bankDef, u8 bankAtk, bool8 checkFlowerVeil);
+bool8 CanBeParalyzed(u8 bank, bool8 checkFlowerVeil);
+bool8 CanBeBurned(u8 bank, bool8 checkFlowerVeil);
+bool8 CanBeFrozen(u8 bank, bool8 checkFlowerVeil);
+bool8 CanBeConfused(u8 bank, u8 checkSafeguard);
+bool8 CanBeTormented(u8 bank);
+bool8 CanBeInfatuated(u8 bankDef, u8 bankAtk);
 
-#define ITEMEFFECT_ON_SWITCH_IN                 0x0
+bool8 IsTrickRoomActive(void);
+bool8 IsMagicRoomActive(void);
+bool8 IsWonderRoomActive(void);
+bool8 IsGravityActive(void);
+bool8 IsIonDelugeActive(void);
+bool8 IsFairyLockActive(void);
+bool8 IsMudSportActive(void);
+bool8 IsWaterSportActive(void);
+bool8 IsInverseBattle(void);
+bool8 BankSideHasSafeguard(u8 bank);
+bool8 BankSideHasMist(u8 bank);
+bool8 BankSideHasSeaOfFire(u8 bank);
+bool8 BankSideHasRainbow(u8 bank);
+bool8 BankSideHasSwamp(u8 bank);
+bool8 SideHasSwamp(u8 side);
+bool8 BankSideHasGMaxVineLash(u8 bank);
+bool8 BankSideHasGMaxWildfire(u8 bank);
+bool8 BankSideHasGMaxCannonade(u8 bank);
+bool8 BankSideHasGMaxVolcalith(u8 bank);
+bool8 IsConfused(u8 bank);
+bool8 IsTaunted(u8 bank);
+bool8 IsTormented(u8 bank);
+bool8 IsHealBlocked(u8 bank);
+bool8 CantUseSoundMoves(u8 bank);
+bool8 IsLaserFocused(u8 bank);
+bool8 IsAbilitySuppressed(u8 bank);
+bool8 CantScoreACrit(u8 bank, struct Pokemon* mon);
 
-#define WEATHER_HAS_EFFECT ((!AbilityBattleEffects(ABILITYEFFECT_CHECK_ON_FIELD, 0, ABILITY_CLOUDNINE, 0, 0) && !AbilityBattleEffects(ABILITYEFFECT_CHECK_ON_FIELD, 0, ABILITY_AIRLOCK, 0, 0)))
-#define WEATHER_HAS_EFFECT2 ((!AbilityBattleEffects(ABILITYEFFECT_FIELD_SPORT, 0, ABILITY_CLOUDNINE, 0, 0) && !AbilityBattleEffects(ABILITYEFFECT_FIELD_SPORT, 0, ABILITY_AIRLOCK, 0, 0)))
+u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg);
+u8 ItemBattleEffects(u8 caseID, u8 bank, bool8 moveTurn, bool8 DoPluck);
+void EmitDataTransfer(u8 bufferId, void* dst, u16 size, void* data);
 
-#define MON_CAN_BATTLE(mon) (((GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_NONE && !GetMonData(mon, MON_DATA_IS_EGG, NULL) && GetMonData(mon, MON_DATA_HP, NULL) != 0)))
+//Functions Hooked In
+void ClearTemporarySpeciesSpriteData(u8 bank, bool8 dontClearSubstitute);
+u16 TryFixDynamaxTransformSpecies(u8 bank, u16 species);
 
-#define BS_GET_TARGET                   0
-#define BS_GET_ATTACKER                 1
-#define BS_GET_EFFECT_BANK              2
-#define BS_GET_SCRIPTING_BANK           10
-#define BS_GET_PLAYER1                  11
-#define BS_GET_OPPONENT1                12
-#define BS_GET_PLAYER2                  13
-#define BS_GET_OPPONENT2                14
+//Exported Constants
+enum {IN_AIR, GROUNDED};
 
-void __attribute__((long_call)) PressurePPLose(u8 bankDef, u8 bankAtk, u16 move);
-void __attribute__((long_call)) PressurePPLoseOnUsingPerishSong(u8 bankAtk);
-void __attribute__((long_call)) PressurePPLoseOnUsingImprision(u8 bankAtk);
+enum ItemBattleEffectCases
+{
+	ItemEffects_SwitchIn,
+	ItemEffects_EndTurn,
+	ItemEffects_ContactTarget,
+	ItemEffects_ContactAttacker
+};
 
-/*
-void __attribute__((long_call)) MarkAllBufferBanksForExecution(void); // unused
-void __attribute__((long_call)) MarkBufferBankForExecution(u8 bank);
-void __attribute__((long_call)) sub_803F850(u8 arg0);
-void __attribute__((long_call)) CancelMultiTurnMoves(u8 bank);
-bool8 __attribute__((long_call)) WasUnableToUseMove(u8 bank);
-void __attribute__((long_call)) PrepareStringBattle(u16 stringId, u8 bank);
-void __attribute__((long_call)) ResetSentPokesToOpponentValue(void);
-void __attribute__((long_call)) sub_803F9EC(u8 bank);
-void __attribute__((long_call)) sub_803FA70(u8 bank);
-void __attribute__((long_call)) BattleScriptPush(const u8* bsPtr);
-void __attribute__((long_call)) BattleScriptPushCursor(void);
-void __attribute__((long_call)) BattleScriptPop(void);
-u8 __attribute__((long_call)) TrySetCantSelectMoveBattleScript(void);
-u8 __attribute__((long_call)) CheckMoveLimitations(u8 bank, u8 unusableMoves, u8 check);
-bool8 __attribute__((long_call)) AreAllMovesUnusable(void);
-u8 __attribute__((long_call)) GetImprisonedMovesCount(u8 bank, u16 move);
-u8 __attribute__((long_call)) UpdateTurnCounters(void);
-u8 __attribute__((long_call)) TurnBasedEffects(void);
-bool8 __attribute__((long_call)) HandleWishPerishSongOnTurnEnd(void);
-bool8 __attribute__((long_call)) HandleFaintedMonActions(void);
-void __attribute__((long_call)) TryClearRageStatuses(void);
-u8 __attribute__((long_call)) AtkCanceller_UnableToUseMove(void);
-bool8 __attribute__((long_call)) sub_80423F4(u8 bank, u8 r1, u8 r2);
-u8 __attribute__((long_call)) CastformDataTypeChange(u8 bank);
-u8 __attribute__((long_call)) AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg);
-void __attribute__((long_call)) BattleScriptExecute(const u8* BS_ptr);
-void __attribute__((long_call)) BattleScriptPushCursorAndCallback(const u8* BS_ptr);
-//u8 __attribute__((long_call)) ItemBattleEffects(u8 caseID, u8 bank, bool8 moveTurn);
-void __attribute__((long_call)) ClearFuryCutterDestinyBondGrudge(u8 bank);
-void __attribute__((long_call)) HandleAction_RunBattleScript(void);
-u8 __attribute__((long_call)) GetMoveTarget(u16 move, u8 useMoveTarget);
-u8 __attribute__((long_call)) IsMonDisobedient(void);
-void __attribute__((long_call)) MarkBufferBankForExecution(u8 battlerId);
-*/
+#define MOVE_LIMITATION_ZEROMOVE    (1 << 0)
+#define MOVE_LIMITATION_PP          (1 << 1)
+#define MOVE_LIMITATION_DISABLED    (1 << 2)
+#define MOVE_LIMITATION_TORMENTED   (1 << 3)
+#define MOVE_LIMITATION_TAUNT       (1 << 4)
+#define MOVE_LIMITATION_IMPRISION   (1 << 5)
+#define MOVE_LIMITATION_CHOICE		(1 << 6)
+#define MOVE_LIMITATION_ENCORE		(1 << 7)

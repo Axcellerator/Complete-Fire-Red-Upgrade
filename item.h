@@ -1,89 +1,132 @@
-#ifndef ITEM_H
-#define ITEM_H
+#pragma once
 
+#include "../global.h"
+#include "../../src/config.h"
 
-typedef void (*ItemUseFunc)(u8);
+/**
+ * \file item.h
+ * \brief Contains functions relating to items and the bag.
+ *		  Also helps with TM/HM expansion and the bag expansion.
+ */
 
-struct Item
-{
-    u8 name[14];
-    u16 itemId;	//0xE
-    u16 price;	//0x10
-    u8 holdEffect;	//0x12
-    u8 holdEffectParam;	//0x13
-    const u8 *description;	//0x14
-    u8 importance;	//0x18
-    u8 unk19;		//0x19
-    u8 pocket;		//0x1a
-    u8 type;		//0x1b
-    ItemUseFunc fieldUseFunc;	//0x1c
-    u8 battleUsage;	//0x20
-    ItemUseFunc battleUseFunc;	//0x24
-    u8 secondaryId;	//0x28
-};
-
-struct BagPocket
-{
-    struct ItemSlot *itemSlots;
-    u16 capacity;
-};
-
-extern struct BagPocket gBagPockets[];
-
-bool8 __attribute__((long_call)) IsMail(u16 item_id);
-void __attribute__((long_call)) CopyItemName(u16 itemId, u8* dst);
-void __attribute__((long_call)) CopyItemNameHandlePlural(u16 itemId, u8 *string, u32 quantity);
-bool8 __attribute__((long_call)) CheckBagHasItem(u16 itemId, u16 count);
-bool8 __attribute__((long_call)) AddBagItem(u16 itemId, u16 count);
-bool8 __attribute__((long_call)) RemoveBagItem(u16 itemId, u16 count);
-u16 __attribute__((long_call)) CountTotalItemQuantityInBag(u16 itemId);
-u16 __attribute__((long_call)) SanitizeItemId(u16 item_id);
-u8 /*__attribute__((long_call))*/ ItemId_GetHoldEffect(u16 item_id);
-u8 /*__attribute__((long_call))*/ ItemId_GetHoldEffectParam(u16 item_id);
-u8 __attribute__((long_call)) ItemId_GetMystery2(u16 item_id);
-u8 __attribute__((long_call)) GetPocketByItemId(u16 item_id);
-u8 __attribute__((long_call)) ItemId_GetType(u16 item_id);
-void __attribute__((long_call)) RemoveUsedItem(void);
-u16 __attribute__((long_call)) GetBagItemQuantity(u16 *quantity);
-u8 __attribute__((long_call)) ItemIsUnique(u16 item);
-void __attribute__((long_call)) Task_BuyHowManyDialogueInit(u8 taskId);
-u16 __attribute__((long_call)) ItemId_GetPrice(u16 itemId);
-void __attribute__((long_call)) BuyMenuConfirmPurchase(u8 taskId);
-u8 __attribute__((long_call)) *ItemId_GetDescription(u16 itemId);
-void __attribute__((long_call)) DisplayItemMessageInBag(u8 taskId, u8 a, const u8* str, void(*callback)(u8 taskId));
-void __attribute__((long_call)) Task_ReturnToBagFromContextMenu(u8 taskId);
-bool8 __attribute__((long_call)) CheckBagHasSpace(u16 itemId, u16 count);
-u16 __attribute__((long_call)) BagGetItemIdByPocketPosition(u8 pocketId, u16 itemId);
-ItemUseFunc __attribute__((long_call)) ItemId_GetFieldFunc(u16 itemId);
-void __attribute__((long_call)) ClearItemSlots(struct ItemSlot *itemSlots, u8 b);
-
-/*
-void GetBerryCountString(u8* dst, const u8* berryName, u32 quantity);
-
-bool8 IsBagPocketNonEmpty(u8 pocket);
-bool8 CheckBagHasItem(u16 itemId, u16 count);
-bool8 AddBagItem(u16 itemId, u16 count);
-u8 GetPocketByItemId(u16 itemId);
-u8 CountUsedPCItemSlots(void);
-bool8 CheckPCHasItem(u16 itemId, u16 count);
-bool8 AddPCItem(u16 itemId, u16 count);
-void RemovePCItem(u8 index, u16 count);
-void SwapRegisteredBike(void);
-const struct Item *ItemId_GetItem(u16 itemId);
-u16 ItemId_GetId(u16 itemId);
+//Exported Functions
+u16 SanitizeItemId(u16 itemId);
+const u8* ItemId_GetName(u16 itemId);
 u8 ItemId_GetHoldEffect(u16 itemId);
 u8 ItemId_GetHoldEffectParam(u16 itemId);
-bool32 ItemId_CopyDescription(u8 *a, u32 itemId, u32 c);
-u8 ItemId_GetImportance(u16 itemId);
-u8 ItemId_GetUnknownValue(u16 itemId);
-u8 ItemId_GetPocket(u16 itemId);
-u8 ItemId_GetType(u16 itemId);
-u8 ItemId_GetBattleUsage(u16 itemId);
-ItemUseFunc ItemId_GetBattleFunc(u16 itemId);
-u8 ItemId_GetSecondaryId(u16 itemId);
-u16 itemid_get_market_price(u16 itemId);
-void sub_809A2DC(void);
-void sub_809A2A4(void);
-void sub_8099E90(u16, u8 *);
-*/
-#endif // ITEM_H
+u8 ItemId_GetMystery2Id(u16 itemId);
+bool8 IsMegaStone(u16 item);
+bool8 IsPrimalOrb(u16 item);
+bool8 IsZCrystal(u16 item);
+bool8 IsTypeZCrystal(u16 item, u8 moveType);
+bool8 IsBerry(u16 item);
+bool8 IsPinchBerryItemEffect(u8 itemEffect);
+bool8 IsGem(u16 item);
+bool8 IsTMHM(u16 item);
+u8 TMIdFromItemId(u16 itemId);
+u8 BerryIdFromItemId(u16 item);
+bool8 GetSetItemObtained(u16 item, u8 caseId);
+u8 ReformatItemDescription(u16 item, u8* dest, u8 maxChars);
+
+u32 CanMonLearnTMHM(struct Pokemon* mon, u8 tm);
+bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId);
+u16 GetExpandedTutorMove(u8 tutorId);
+void CopyTMName(u8* dst, u16 itemId);
+u8 CanMonLearnTMTutor(struct Pokemon* mon, u16 item, u8 tutor);
+
+bool8 IsItemRegistered(u16 item);
+bool8 CanRegisterNewItem(void);
+void RegisterItem(u16 item);
+void RemoveRegisteredItem(u16 item);
+void CompactRegisteredItems(void);
+
+u16 GetNumItemsInPocket(u8 pocket);
+u16 GetCurrentPocketItemAmount(void);
+bool8 DoesBagHaveBerry(void);
+void SortBerriesOrTMHMs(struct BagPocket* bagPocket);
+void SortItemsInBag(u8 pocket, u8 type);
+
+//Hooked in Functions
+u8 TryHandleExcuseForDracoMeteorTutor(struct Pokemon* mon);
+u8 TryHandleExcuseForDracoMeteorTutorAlreadyKnow(void);
+void CancelPartyMenuLearnTutor(u8 taskId);
+u16 ItemIdToBattleMoveId(u16 item);
+void LoadTMNameWithNo(u8* dst, u16 itemId);
+void LoadTmHmNameInMart(u16 item);
+void* LoadTmHmMartDescription(u16 item);
+bool8 CheckIsHmMove(u16 move);
+bool8 CheckTmHmInFront(u16 item);
+u8 CheckDiscIsTmHm(struct Sprite* disc, u16 itemId);
+u8 TmHMDiscPosition(unusedArg struct Sprite* disc, u8 tmId);
+bool8 CheckReusableTMs(u16 item);
+u8 CheckHmSymbol(u16 item);
+bool8 CheckSellTmHm(u16 item);
+void CheckTmPurchase(u16 item, u8 taskId);
+bool8 CheckBuyableTm(u16 item, u8 taskId);
+u16 CheckTmPrice(u16 item);
+u8 CheckSingleBagTm(u16 item);
+const void* FixTmHmDiscPalette(u8 type);
+
+void CompactItemsInBagPocket(struct ItemSlot* itemSlots, u16 amount);
+void Task_ReturnToItemListAfterItemPurchase(u8 taskId);
+void SetMemoryForBagStorage(void);
+void AllocateBagItemListBuffers(void);
+bool8 AllocateBerryPouchListBuffers(void);
+void PokeDudeBackupBag(void);
+void PokeDudeRestoreBag(void);
+void PokeDudeBackupKeyItemsTMs(void);
+void PokeDudeRestoreKeyItemsTMs(void);
+void StoreBagItemCount(void);
+bool8 TrySetupSortBag(u8 taskId);
+void LoadBagSorterMenuOptions(void);
+void PrintBagSortItemQuestion(u8 windowId);
+
+//Exported Constants
+enum
+{
+    CAN_LEARN_MOVE,
+    CANNOT_LEARN_MOVE,
+    ALREADY_KNOWS_MOVE,
+    CANNOT_LEARN_MOVE_IS_EGG,
+};
+
+enum ItemObtainFlags
+{
+    FLAG_GET_OBTAINED,
+    FLAG_SET_OBTAINED,
+};
+
+#define REGISTERED_ITEM_COUNT 6
+#define NUM_TMSHMS NUM_TMS + NUM_HMS	// never change this
+
+#define gTMHMMoves ((const u16*) *((u32*) 0x8125A8C))
+#define gTutorMoves ((const u16*) *((u32*) 0x8120BE4))
+
+enum ItemType //Sorted in this order
+{
+	ITEM_TYPE_FIELD_USE,
+	ITEM_TYPE_HEALTH_RECOVERY,
+	ITEM_TYPE_STATUS_RECOVERY,
+	ITEM_TYPE_PP_RECOVERY,
+	ITEM_TYPE_STAT_BOOST_DRINK,
+	ITEM_TYPE_STAT_BOOST_WING,
+	ITEM_TYPE_EVOLUTION_STONE,
+	ITEM_TYPE_EVOLUTION_ITEM,
+	ITEM_TYPE_BATTLE_ITEM,
+	ITEM_TYPE_FLUTE,
+	ITEM_TYPE_STAT_BOOST_HELD_ITEM,
+	ITEM_TYPE_HELD_ITEM,
+	ITEM_TYPE_GEM,
+	ITEM_TYPE_PLATE,
+	ITEM_TYPE_MEMORY,
+	ITEM_TYPE_DRIVE,
+	ITEM_TYPE_INCENSE,
+	ITEM_TYPE_MEGA_STONE,
+	ITEM_TYPE_Z_CRYSTAL,
+	ITEM_TYPE_NECTAR,
+	ITEM_TYPE_SELLABLE,
+	ITEM_TYPE_RELIC,
+	ITEM_TYPE_SHARD,
+	ITEM_TYPE_FOSSIL,
+	ITEM_TYPE_MAIL,
+};

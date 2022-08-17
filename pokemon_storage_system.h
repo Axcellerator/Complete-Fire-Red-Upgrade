@@ -1,44 +1,80 @@
 #pragma once
 
-#include "global.h"
-#include "pokemon.h"
+#include "../global.h"
 
-#define ORIGINAL_TOTAL_BOXES_COUNT 	14
-#define TOTAL_BOXES_COUNT       	25
-#define IN_BOX_ROWS             	5
-#define IN_BOX_COLUMNS          	6
-#define IN_BOX_COUNT            	(IN_BOX_ROWS * IN_BOX_COLUMNS)
+/**
+ * \file pokemon_storage_system.h
+ * \brief Contains functions relating to viewing or modifying data in the PC. It also
+ *		  helps expand the total number of available boxes past the original 14. It does
+ *		  this mainly be compressing the Pokemon data structure down to 65 bytes. Contest
+ *		  stats, ribbons, unused bytes, and fateful encounter are all removed in the
+ *		  processed. Thus, these stats can no longer be used for anything permanent, but
+ *		  can be used as long as the player doesn't deposit their Pokemon (temporary stats).
+ */
 
-//So bytereplacement can call a constant
-#define TOTAL_BOXES_COUNT_1_LESS	24
 
-/*
-            ROWS
-COLUMNS     0   1   2   3   4   5
-            6   7   8   9   10  11
-            12  13  14  15  16  17
-            18  19  20  21  22  23
-            24  25  26  27  28  29
-*/
-
-struct PokemonStorage
+struct __attribute__((packed)) CompressedPokemonSubstruct0
 {
-    /*0x0000*/ u8 currentBox;
-    /*0x0001*/ struct BoxPokemon boxes[ORIGINAL_TOTAL_BOXES_COUNT][IN_BOX_COUNT];
-    /*0x8344*/ u8 boxNames[ORIGINAL_TOTAL_BOXES_COUNT][9];
-    /*0x83C2*/ u8 boxWallpapers[ORIGINAL_TOTAL_BOXES_COUNT];
+    u16 species;
+    u16 heldItem;
+    u32 experience;
+    u8 ppBonuses;
+    u8 friendship;
+	u8 pokeball;
+	//u8 unknown; //Removed to save space for box mon
 };
 
-struct WallpaperTable
+struct __attribute__((packed)) CompressedPokemon
 {
-    const u8* tiles;
-    const u8* tileMap;
-    const u16* palettes;
-};
+	u32 personality;
+	u32 otid;
+	u8 nickname[10];
+	u8 language;
+	u8 sanity;
+	u8 otname[7];
+	u8 markings;
 
-//extern struct PokemonStorage* gPokemonStoragePtr;
+//Substructure Growth
+    struct CompressedPokemonSubstruct0 substruct0;
+	u32 move1 : 10;
+	u32 move2 : 10;
+	u32 move3 : 10;
+	u16 move4 : 10;
 
-u8 __attribute__((long_call)) StorageGetCurrentBox(void);
-void __attribute__((long_call)) CompactPartySlots(void);
-u16 __attribute__((long_call)) GetPCBoxToSendMon(void);
-void __attribute__((long_call)) SetPCBoxToSendMon(u8 id);
+//Substructure Condition
+    u8 hpEv;
+    u8 atkEv;
+    u8 defEv;
+    u8 spdEv;
+    u8 spAtkEv;
+    u8 spDefEv;
+
+//Substructure Misc
+ /* 0x00 */ u8 pokerus;
+ /* 0x01 */	u8 metLocation;
+ /* 0x02 */ u16 metInfo; //Met level, met game, OT gender
+ /* 0x04 */ u32 ivs;
+}; //SIZE = 0x3A / 58 bytes
+
+
+//Exported Functions
+u32 GetBoxMonDataAt(u8 boxId, u8 boxPosition, s32 request);
+void SetBoxMonDataAt(u8 boxId, u8 boxPosition, s32 request, const void* value);
+void GetBoxMonNickAt(u8 boxId, u8 boxPosition, u8* dst);
+void SetBoxMonNickAt(u8 boxId, u8 boxPosition, const u8* nick);
+u32 GetAndCopyBoxMonDataAt(u8 boxId, u8 boxPosition, s32 request, void* dst);
+void SetBoxMonAt(u8 boxId, u8 boxPosition, struct BoxPokemon* src);
+void CreateBoxMonAt(u8 boxId, u8 boxPosition, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 personality, u8 otIDType, u32 otID);
+void ZeroBoxMonAt(u8 boxId, u8 boxPosition);
+void BoxMonAtToMon(u8 boxId, u8 boxPosition, struct Pokemon *dst);
+struct BoxPokemon* GetBoxedMonPtr(u8 boxId, u8 boxPosition);
+u8 SendMonToBoxPos(struct Pokemon* mon, u8 boxNo, u8 boxPos);
+void BackupPartyToTempTeam(u8 firstId, u8 numPokes);
+void RestorePartyFromTempTeam(u8 firstId, u8 numPokes);
+
+//Functions Hooked In
+u8* GetBoxNamePtr(u8 boxId);
+u8 GetBoxWallpaper(u8 boxId);
+void SetBoxWallpaper(u8 boxId, u8 wallpaperId);
+s8 sub_80916F4(u8 boxId);
+u8 SendMonToPC(struct Pokemon* mon);
