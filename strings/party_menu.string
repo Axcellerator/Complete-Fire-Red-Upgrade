@@ -32,16 +32,16 @@ Dive underwater.
 [BUFFER1] changed Forme![PAUSE_UNTIL_PRESS]
 
 #org @gText_DNASplicersFuseWithWhich
-Fuse with which Pok\emon?[PAUSE_UNTIL_PRESS]
+Fuse with which Mo\emon?[PAUSE_UNTIL_PRESS]
 
 #org @gText_AlreadyHaveFused
 You already have a [BUFFER1]\nfused with a [BUFFER2].[PAUSE_UNTIL_PRESS]
 
 #org @gText_NoSpaceForDefuse
-You have no room to\nseparate the Pok\emon.[PAUSE_UNTIL_PRESS]
+You have no room to\nseparate the Mo\emon.[PAUSE_UNTIL_PRESS]
 
 #org @gText_CantFuseWithPokemon
-It cannot be fused with\nthat Pok\emon.[PAUSE_UNTIL_PRESS]
+It cannot be fused with\nthat Mo\emon.[PAUSE_UNTIL_PRESS]
 
 #org @gText_AbilityCapsuleOfferChange
 Change [BUFFER1]'s Ability\nto [BUFFER2]?

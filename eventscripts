@@ -1,1 +1,267 @@
 ##
+npc 3 0 1 EventScript_Trainer
+
+#PLAYER'S ROOM
+tile 4 1 0 EventScript_LevelCapsFlag
+sign 4 1 1 EventScript_PC
+
+
+#Silph Co 
+sign 1 58 0 EventScript_silphcoelevatorthatworks_StartV2
+
+#ROUTE 2
+npc 3 20 2 EventScript_Cut
+npc 3 20 3 EventScript_Cut
+npc 3 20 0 EventScript_Cut
+npc 3 20 1 EventScript_Cut
+
+# PEWTER CITY
+npc 3 2 4 EventScript_Cut 
+
+# VIRIDIAN CITY
+npc 3 1 1 EventScript_Cut 
+
+#CERULEAN 
+npc 3 3 8 EventScript_Cut
+
+#CELADON
+npc 3 6 9 EventScript_Cut
+npc 3 6 10 EventScript_Cut  
+npc 10 16 10 EventScript_Cut 
+npc 10 16 9 EventScript_Cut 
+npc 10 16 8 EventScript_Cut 
+npc 10 17 0 EventScript_ZeCook_Start
+
+#TWO ISLAND
+npc 3 13 5 EventScript_Cut 
+
+#THREE ISLAND
+npc 3 14 8 EventScript_Cut 
+
+#Route 25
+npc 3 44 10 EventScript_Cut 
+
+#Vermilion City
+npc 3 5 6 EventScript_Cut
+
+#Route 9
+npc 3 27 9 EventScript_Cut
+
+#Route 10
+npc 3 28 6 EventScript_Cut 
+npc 3 28 7 EventScript_Cut 
+npc 3 28 8 EventScript_Cut 
+npc 3 28 9 EventScript_Cut 
+
+#Route 8 
+npc 3 26 9 EventScript_Cut 
+npc 3 26 10 EventScript_Cut 
+
+#Route 16
+npc 3 34 6 EventScript_Cut 
+
+#Route 12
+npc 3 30 8 EventScript_Cut 
+npc 3 30 13 EventScript_Cut 
+
+#Route 13
+npc 3 31 10 EventScript_Cut 
+
+#Route 14 
+npc 3 32 10 EventScript_Cut 
+npc 3 32 11 EventScript_Cut 
+npc 3 32 12 EventScript_Cut 
+
+#KINDLE ROAD
+npc 3 45 21 EventScript_RockSmash
+npc 3 45 20 EventScript_RockSmash
+npc 3 45 18 EventScript_RockSmash
+npc 3 45 19 EventScript_RockSmash
+npc 3 45 23 EventScript_RockSmash
+npc 3 45 16 EventScript_RockSmash
+npc 3 45 14 EventScript_RockSmash
+npc 3 45 15 EventScript_RockSmash
+npc 3 45 13 EventScript_RockSmash
+npc 3 45 17 EventScript_RockSmash
+npc 3 45 24 EventScript_RockSmash
+npc 3 45 22 EventScript_RockSmash
+npc 3 45 25 EventScript_RockSmash
+
+#BOND BRIDGE
+npc 3 48 7 EventScript_Cut
+npc 3 48 8 EventScript_Cut
+
+#FIVE ISLE MEADOW
+npc 3 56 3 EventScript_Cut
+npc 3 56 4 EventScript_Cut
+
+#VICTORY ROAD
+npc 1 39 4 EventScript_newstrength_Start
+npc 1 39 5 EventScript_newstrength_Start
+npc 1 39 6 EventScript_newstrength_Start
+npc 1 40 9 EventScript_newstrength_Start
+npc 1 40 10 EventScript_newstrength_Start
+npc 1 40 11 EventScript_newstrength_Start
+npc 1 41 6 EventScript_newstrength_Start
+npc 1 41 7 EventScript_newstrength_Start
+npc 1 41 8 EventScript_newstrength_Start
+npc 1 41 9 EventScript_newstrength_Start
+
+#Rock Tunnel
+npc 1 82 11 EventScript_RockSmash 
+npc 1 82 12 EventScript_RockSmash 
+npc 1 82 13 EventScript_RockSmash 
+npc 1 82 14 EventScript_RockSmash 
+npc 1 82 15 EventScript_RockSmash 
+npc 1 82 16 EventScript_RockSmash 
+npc 1 82 17 EventScript_RockSmash 
+npc 1 82 18 EventScript_RockSmash 
+npc 1 82 19 EventScript_RockSmash 
+npc 1 82 20 EventScript_RockSmash 
+npc 1 82 21 EventScript_RockSmash 
+npc 1 82 22 EventScript_RockSmash 
+npc 1 82 23 EventScript_RockSmash 
+npc 1 82 24 EventScript_RockSmash 
+npc 1 82 25 EventScript_RockSmash 
+
+#Mt Ember 
+npc 1 97 8 EventScript_newstrength_Start
+npc 1 97 9 EventScript_newstrength_Start
+npc 1 97 6 EventScript_RockSmash 
+npc 1 97 7 EventScript_RockSmash 
+npc 1 97 15 EventScript_RockSmash 
+npc 1 97 16 EventScript_RockSmash 
+npc 1 97 12 EventScript_RockSmash 
+npc 1 97 11 EventScript_RockSmash 
+npc 1 97 10 EventScript_newstrength_Start
+npc 1 97 13 EventScript_newstrength_Start
+npc 1 97 14 EventScript_newstrength_Start
+npc 1 99 0 EventScript_RockSmash 
+npc 1 99 1 EventScript_RockSmash 
+npc 1 99 2 EventScript_RockSmash 
+npc 1 99 3 EventScript_RockSmash 
+npc 1 99 4 EventScript_RockSmash 
+npc 1 99 5 EventScript_RockSmash 
+npc 1 99 6 EventScript_RockSmash 
+npc 1 99 7 EventScript_RockSmash 
+npc 1 99 8 EventScript_RockSmash 
+npc 1 101 1 EventScript_newstrength_Start
+npc 1 101 2 EventScript_newstrength_Start
+npc 1 101 3 EventScript_newstrength_Start
+npc 1 101 4 EventScript_newstrength_Start 
+npc 1 103 0 EventScript_RockSmash
+npc 1 103 1 EventScript_RockSmash
+npc 1 103 2 EventScript_RockSmash
+npc 1 103 3 EventScript_RockSmash
+npc 1 103 4 EventScript_RockSmash
+npc 1 104 0 EventScript_RockSmash
+npc 1 104 1 EventScript_RockSmash
+npc 1 104 2 EventScript_RockSmash
+npc 1 104 3 EventScript_RockSmash
+npc 1 105 4 EventScript_RockSmash
+npc 1 105 3 EventScript_RockSmash
+npc 1 105 5 EventScript_RockSmash
+npc 1 105 6 EventScript_RockSmash
+npc 1 105 0 EventScript_newstrength_Start 
+npc 1 105 1 EventScript_newstrength_Start 
+npc 1 105 2 EventScript_newstrength_Start
+npc 1 106 9 EventScript_newstrength_Start
+npc 1 106 0 EventScript_newstrength_Start 
+npc 1 106 1 EventScript_newstrength_Start 
+npc 1 106 2 EventScript_newstrength_Start
+npc 1 106 6 EventScript_RockSmash   
+npc 1 106 5 EventScript_RockSmash 
+npc 1 106 7 EventScript_RockSmash 
+npc 1 106 4 EventScript_RockSmash 
+npc 1 106 8 EventScript_RockSmash 
+npc 1 106 3 EventScript_RockSmash 
+npc 1 107 0 EventScript_RockSmash 
+npc 1 108 0 EventScript_RockSmash 
+npc 1 108 1 EventScript_RockSmash 
+
+#RUIN VALLEY
+npc 3 61 10 EventScript_newstrength_Start
+npc 3 61 9 EventScript_newstrength_Start
+npc 3 61 7 EventScript_newstrength_Start
+npc 3 61 8 EventScript_newstrength_Start
+npc 3 61 6 EventScript_newstrength_Start
+npc 3 61 11 EventScript_newstrength_Start
+npc 3 61 12 EventScript_newstrength_Start
+npc 3 61 13 EventScript_newstrength_Start
+
+#Seafoam Islands
+npc 1 83 0 EventScript_newstrength_Start
+npc 1 83 1 EventScript_newstrength_Start
+npc 1 84 0 EventScript_newstrength_Start
+npc 1 84 1 EventScript_newstrength_Start
+npc 1 85 0 EventScript_newstrength_Start
+npc 1 85 1 EventScript_newstrength_Start
+npc 1 86 2 EventScript_newstrength_Start
+npc 1 86 3 EventScript_newstrength_Start
+npc 1 86 4 EventScript_newstrength_Start
+npc 1 86 5 EventScript_newstrength_Start
+
+#SEVAULT CANYON
+npc 3 64 15 EventScript_RockSmash
+npc 3 64 8 EventScript_RockSmash
+npc 3 64 10 EventScript_RockSmash
+npc 3 64 12 EventScript_RockSmash
+npc 3 64 13 EventScript_RockSmash
+npc 3 64 11 EventScript_RockSmash
+npc 3 64 9 EventScript_newstrength_Start
+npc 3 64 14 EventScript_newstrength_Start
+
+#Cerulean Cave 
+npc 1 72 3 EventScript_RockSmash 
+npc 1 72 4 EventScript_RockSmash 
+npc 1 72 5 EventScript_RockSmash 
+npc 1 72 6 EventScript_RockSmash 
+npc 1 72 7 EventScript_RockSmash 
+npc 1 72 8 EventScript_RockSmash
+npc 1 73 3 EventScript_RockSmash 
+npc 1 73 4 EventScript_RockSmash 
+npc 1 73 5 EventScript_RockSmash 
+npc 1 73 6 EventScript_RockSmash 
+npc 1 73 7 EventScript_RockSmash 
+npc 1 73 8 EventScript_RockSmash
+npc 1 73 9 EventScript_RockSmash
+npc 1 73 10 EventScript_RockSmash
+npc 1 73 11 EventScript_RockSmash
+npc 1 73 12 EventScript_RockSmash
+npc 1 74 3 EventScript_RockSmash 
+npc 1 74 4 EventScript_RockSmash 
+npc 1 74 5 EventScript_RockSmash 
+npc 1 74 6 EventScript_RockSmash 
+npc 1 74 7 EventScript_RockSmash 
+npc 1 74 8 EventScript_RockSmash
+npc 1 74 9 EventScript_RockSmash
+npc 1 74 10 EventScript_RockSmash
+npc 1 74 11 EventScript_RockSmash
+
+#BERRY FOREST
+npc 1 109 3 EventScript_Cut
+npc 1 109 7 EventScript_Cut
+npc 1 109 8 EventScript_Cut
+npc 1 109 9 EventScript_Cut
+npc 1 109 10 EventScript_Cut
+npc 1 109 1 EventScript_Cut
+npc 1 109 2 EventScript_Cut
+npc 1 109 4 EventScript_Cut
+npc 1 109 5 EventScript_Cut
+npc 1 109 6 EventScript_Cut
+
+#TANOBY KEY
+npc 2 35 0 EventScript_newstrength_Start
+npc 2 35 1 EventScript_newstrength_Start
+npc 2 35 2 EventScript_newstrength_Start
+npc 2 35 3 EventScript_newstrength_Start
+npc 2 35 4 EventScript_newstrength_Start
+npc 2 35 5 EventScript_newstrength_Start
+npc 2 35 6 EventScript_newstrength_Start
+
+#FUSCHIA CITY
+npc 11 7 1 EventScript_newstrength_Start
+npc 3 7 10 EventScript_Cut
+npc 3 7 11 EventScript_Cut
+npc 3 7 12 EventScript_Cut
+npc 3 7 13 EventScript_Cut

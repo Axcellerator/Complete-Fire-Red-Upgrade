@@ -1,0 +1,92 @@
+#org @gText_EVSubtracter_Msg
+Hi, I can subtract EVs from a\nMo\emon. You in?
+
+#org @gText_EVSubtracter_1
+Your [BUFFER1][.]\nWhich stat should I subtract?
+
+#org @gText_EVSubtracter_2
+Feel free to come back if you\nneed my assistance.
+
+#org @gText_EVSubtracter_4
+Shall I do another Mo\emon?
+
+#org @gText_EVSubtracter_Reduceby
+Reduce by 10, 50, 100, or 252?
+
+#org @gText_EVSubtracter_None
+The EVs in that stat are at 0. 
+
+#org @gText_EVSubtracter_HP
+HP
+
+#org @gText_EVSubtracter_Attack
+Attack
+
+#org @gText_EVSubtracter_Defense
+Defense
+
+#org @gText_EVSubtracter_SpA
+Sp. Attack
+
+#org @gText_EVSubtracter_SpDef
+Sp. Def
+
+#org @gText_EVSubtracter_Speed
+Speed
+
+#org @gText_EVSubtracter_AllStats
+All Stats
+
+#org @gText_EVSubtracter_Ten
+10
+
+#org @gText_EVSubtracter_Fifty
+50
+
+#org @gText_EVSubtracter_Hundred
+100
+
+#org @gText_EVSubtracter_All
+252
+
+#org @gText_EVSubtracter_By10
+Succesfully reduced by 10!
+
+#org @gText_EVSubtracter_By50
+Succesfully reduced by 50!
+
+#org @gText_EVSubtracter_By100
+Succesfully reduced by 100!
+
+#org @gText_EVSubtracter_ByAll
+Succesfully reduced by 252!
+
+#org @gText_EVSubtracter_DoAllDone
+Sucessfully reset [BUFFER1]'s\nEVs! 
+
+#org @gText_EVSubtracter_DoAll 
+Shall I reduce all of\n[BUFFER1]'s EVs? 
+
+#org @gText_EVSubtracter_Currently
+It currently has [BUFFER2] EVs in that\nstat.
+
+#org @gText_EVSubtracter_NowHas
+It now has [BUFFER2] EVs in that\nstat.
+
+#org @gText_EvChecker_Msg
+Hi, I'm a gigantic nerd.\pI can check your Mo\emon's EVs at a\nglance. Interested?
+
+#org @gText_EvChecker_1
+Your [BUFFER1] has[.]
+
+#org @gText_EvChecker_2
+Well, just here to help.
+
+#org @gText_EvChecker_3
+[BUFFER1] HP EVs, [BUFFER2] Atk EVs, [BUFFER3] Def EVs[.]
+
+#org @gText_EvChecker_4
+Shall I check another one?
+
+#org @gText_EvChecker_5
+[BUFFER1] SpAtk EVs, [BUFFER2] SpDef EVs,\n[BUFFER3] Speed EVs.

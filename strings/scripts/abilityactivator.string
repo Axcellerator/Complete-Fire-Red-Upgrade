@@ -1,0 +1,18 @@
+#org @gText_SaffronNerd_NoHidden
+[.]That [GREEN]Mo\emon[BLUE] doesn't have a\nHidden Ability. 
+
+#org @gText_Saffron_NerdGiveItem
+[BLACK][PLAYER] handed over a Heart Scale.[BLUE]
+
+#org @gText_Saffron_NerdGiveItem2
+[BLACK][PLAYER] handed over a Bottle Cap.[BLUE]
+
+#org @gText_Saffron_NerdAfter
+Thank you!\pAbilities have been swapped.
+
+#org @gText_Saffron_NerdReject
+Uh, you don't have a [GREEN]Bottle Cap[BLUE].
+
+#org @gText_Saffron_Nerd
+Hi, I can swap to a [GREEN]Mo\emon[BLUE]'s\nhidden ability and vice versa.\pI'll need a [GREEN]Bottle Cap[BLUE] though.\pHow about it?
+

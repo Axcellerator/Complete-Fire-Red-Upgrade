@@ -71,10 +71,13 @@ Standard
 No Restrictions
 
 #org @gText_SmogonGen7OU
-Smogon Gen 7 OU
+Smogon OU
+
+#org @gText_SmogonOUDoubles
+Smogon Doubles OU
 
 #org @gText_SmogonGen7Uber
-Smogon Gen 7 Ubers
+Smogon Ubers
 
 #org @gText_SmogonLittleCup
 Smogon Little Cup
@@ -124,6 +127,18 @@ Dynamax Standard
 #org @gText_NationalDexOU
 Smogon National Dex OU
 
+#org @gText_SmogonMetronome
+Smogon Metronome
+
+#org @gText_SmogonGen7UU
+Smogon Gen 7 UU
+
+#org @gText_SmogonGen7RU
+Smogon Gen 7 RU
+
+#org @gText_SmogonGen7NU
+Smogon Gen 7 NU
+
 #org @gText_BattleMineFormat1
 Cave Format
 
@@ -132,6 +147,9 @@ Mountain Format
 
 #org @gText_BattleMineFormat3
 Pebble Format
+
+#org @gText_BattleMineFormat4
+Cordillera Format
 
 #org @gText_On
 on
@@ -148,6 +166,9 @@ not be able
 #org @gText_Previous
 Previous
 
+#org @gText_Current
+Current
+
 #org @gText_Max
 Max
 
@@ -157,16 +178,16 @@ None
 //Preceded by "The next battle will take place"
 
 #org @gText_BattleCircusDescriptionElectricTerrain
-with the battlefield electrified!\pGrounded Pok\emon can't fall asleep\nand have stronger Electric-moves!
+with the battlefield electrified!\pGrounded Mo\emon can't fall asleep\nand have stronger Electric-moves!
 
 #org @gText_BattleCircusDescriptionGrassyTerrain
-with the battlefield grassy!\pGrounded Pok\emon have stronger\nGrass-moves and heal every turn!
+with the battlefield grassy!\pGrounded Mo\emon have stronger\nGrass-moves and heal every turn!
 
 #org @gText_BattleCircusDescriptionMistyTerrain
-with the battlefield misty!\pGrounded Pok\emon have stronger\nFairy-moves and can't be afflicted\lwith status conditions!
+with the battlefield misty!\pGrounded Mo\emon have stronger\nFairy-moves and can't be afflicted\lwith status conditions!
 
 #org @gText_BattleCircusDescriptionPsychicTerrain
-with the battlefield weird!\pGrounded Pok\emon have stronger\nPsychic-moves and can't be hit\lby priority moves!
+with the battlefield weird!\pGrounded Mo\emon have stronger\nPsychic-moves and can't be hit\lby priority moves!
 
 #org @gText_BattleCircusDescriptionRain
 in the rain!
@@ -180,11 +201,11 @@ in a sandstorm!
 #org @gText_BattleCircusDescriptionHail
 in a hailstorm!
 
-#org @gText_BattleCircusDescriptionFog
-under the cover of a deep fog[.]
+#org @gText_BattleCircusDescriptionDeltaStream
+with strong winds blowing!\pFlying-type Mo\emon take less\ndamage from super effective moves!
 
 #org @gText_BattleCircusDescriptionTrickRoom
-in a Trick Room!\pSlower Pok\emon get to move first!
+in a Trick Room!\pSlower Mo\emon get to move first!
 
 #org @gText_BattleCircusDescriptionMagicRoom
 in a Magic Room!\pMost held items have no effect!
@@ -193,61 +214,61 @@ in a Magic Room!\pMost held items have no effect!
 in a Wonder Room!\pDefense and Sp. Def stats are\nswapped!
 
 #org @gText_BattleCircusDescriptionGravity
-with intense gravity!\pNo Pok\emon will remain airborne!
+with intense gravity!\pNo Mo\emon will remain airborne!
 
-#org @gText_BattleCircusDescriptionIonDeluge
-with a deluge of ions in the air!\pAll Normal-type moves will become\nElectric-type!
+#org @gText_BattleCircusDescriptionMagnetRise
+with electromagnetism on the field!\pElectric- and Steel-type Mo\emon\ncan't be hit by Ground-type moves!
 
 #org @gText_BattleCircusDescriptionFairyLock
-with the battlefield locked down!\pNo Pok\emon will be able to switch\nout!
+with the battlefield locked down!\pNo Mo\emon will be able to switch\nout!
 
-#org @gText_BattleCircusDescriptionMudSport
-with mud showering the battlefield!\pAll Electric-type moves will be\nweakened!
+#org @gText_BattleCircusDescriptionPixies
+with pixies in the air!\pFairy-type Mo\emon will have their\nlowest defensive stat boosted!
 
-#org @gText_BattleCircusDescriptionWaterSport
-with water in the air!\pAll Fire-type moves will be\nweakened!
+#org @gText_BattleCircusDescriptionBadThoughts
+with negative emotions in the air!\pMo\emon that aren't part Dark-\ntype, Ghost-type, Psychic-type,\lor have one of the Abilities\lUnaware, Oblivious, or Magic Guard\lwill be hurt each turn!
 
 #org @gText_BattleCircusDescriptionInverseBattle
 in an Inverse Battle!\pAll type matchups are reversed!
 
 #org @gText_BattleCircusDescriptionDynamax
-with a Power Spot active!\pAll Pok\emon will be able to\nDynamax!\pHowever, no Pok\emon may Mega\nEvolve, undergo Primal Reversion,\lUltra Burst, or use Z-Moves!
+with a Power Spot active!\pAll Mo\emon will be able to\nDynamax!\pHowever, no Mo\emon may Mega\nEvolve, undergo Primal Reversion,\lUltra Burst, or use Z-Moves!
 
 #org @gText_BattleCircusDescriptionTradeMon
-with Pok\emon swapped!\pEach side will use one of the\nopposing side's Pok\emon at random!
+with Mo\emon swapped!\pEach side will use one of the\nopposing side's Mo\emon at random!
 
 #org @gText_BattleCircusDescriptionSafeguard
-with a veil protecting both sides\lof the battlefield!\pNo Pok\emon may inflict status\nconditions on another!
+with a veil protecting both sides\lof the battlefield!\pNo Mo\emon may inflict status\nconditions on another!
 
 #org @gText_BattleCircusDescriptionMist
-with Mist surrounding both sides\lof the battlefield!\pNo Pok\emon may have their stats\nlowered by another!
+with Mist surrounding both sides\lof the battlefield!\pNo Mo\emon may have their stats\nlowered by another!
 
 #org @gText_BattleCircusDescriptionSeaOfFire
-with a Sea of Fire engulfing both\lsides of the battlefield!\pAll non-Fire-type Pok\emon will be\ndamaged each turn!
+with a Sea of Fire engulfing both\lsides of the battlefield!\pAll non-Fire-type Mo\emon will be\ndamaged each turn!
 
 #org @gText_BattleCircusDescriptionRainbow
 with a Rainbow present on both\lsides of the battlefield!\pAll moves have their secondary\neffect chance doubled!
 
 #org @gText_BattleCircusDescriptionConfused
-with all Pok\emon confused!
+with all Mo\emon confused!
 
 #org @gText_BattleCircusDescriptionTaunt
-with all Pok\emon taunted!\pNo status moves can be used!
+with all Mo\emon taunted!\pNo status moves can be used!
 
 #org @gText_BattleCircusDescriptionTorment
-with all Pok\emon tormented!\pNo move can be used twice in a row.
+with all Mo\emon tormented!\pNo move can be used twice in a row.
 
 #org @gText_BattleCircusDescriptionHealBlock
-with all Pok\emon Heal Blocked!\pNo Pok\emon will be able to heal!
+with all Mo\emon Heal Blocked!\pNo Mo\emon will be able to heal!
 
 #org @gText_BattleCircusDescriptionThroatChop
-with all Pok\emon Throat Chopped!\pNo sound-based moves can be used!
+with all Mo\emon Throat Chopped!\pNo sound-based moves can be used!
 
 #org @gText_BattleCircusDescriptionAlwaysCrit
-with all Pok\emon Laser Focused!\pMoves will always score critical\nhits!
+with all Mo\emon Laser Focused!\pMoves will always score critical\nhits!
 
 #org @gText_BattleCircusDescriptionNoCrits
-with no Pok\emon being able to\lscore a critical hit!
+with no Mo\emon being able to\lscore a critical hit!
 
 #org @gText_BattleCircusDescriptionAbilitySuppression
-with all Pok\emon having their\labilities suppressed!
+with all Mo\emon having their\labilities suppressed!

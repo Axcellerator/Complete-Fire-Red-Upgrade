@@ -1,8 +1,54 @@
+#include "src/config.h"
+
 #org @DESC_BLANK
 -
 
 #org @DESC_NO_MOVE
 No move information.
+
+#org @DESC_ICEPUNCH
+#ifdef FROSTBITE
+The foe is punched\nwith an icy fist.\nIt may leave the\nfoe with frostbite.
+#else
+The foe is punched\nwith an icy fist.\nIt may leave the\nfoe frozen.
+#endif
+
+#org @DESC_ICEBEAM
+#ifdef FROSTBITE
+The foe is struck\nwith an icy beam.\nIt may leave the\nfoe with frostbite.
+#else
+The foe is struck\nwith an icy beam.\nIt may leave the\nfoe frozen.
+#endif
+
+#org @DESC_BLIZZARD
+#ifdef FROSTBITE
+A blizzard strikes\nthe opposing team.\nIt may also leave\nthem with frostbite.
+#else
+A blizzard strikes\nthe opposing team.\nIt may also freeze\nthem solid.
+#endif
+
+#org @DESC_GROWTH
+The user's body is\nforced to grow,\nraising the Attack\nand Sp. Atk stats.
+
+#org @DESC_TRIATTACK
+#ifdef FROSTBITE
+A simultaneous\n3-beam attack that\nmay paralyze, burn,\nor frostbite the foe.
+#else
+A simultaneous\n3-beam attack that\nmay paralyze, burn,\nor freeze the foe.
+#endif
+
+#org @DESC_POWDERSNOW
+#ifdef FROSTBITE
+The opposing team is\nhit with powdery snow\nthat may leave them\nwith frostbite.
+#else
+The opposing team is\nhit with powdery snow\nthat may leave them\nfrozen solid.
+#endif
+
+#org @DESC_RAPIDSPIN
+An attack that frees\nthe user from traps\nand hazards. Also\nraises Speed.
+
+#org @DESC_HOWL
+The user howls to\nraise its team's\nspirit and boost\ntheir Attack stats.
 
 #org @DESC_LEECHFANG
 An attack that\nabsorbs half the\ndamage it inflicted\nto restore HP.
@@ -11,7 +57,7 @@ An attack that\nabsorbs half the\ndamage it inflicted\nto restore HP.
 The foe is sliced\nby a blade of air.\nIt may also make\nthe foe flinch.
 
 #org @DESC_AQUAJET
-An almost invisibly\nfast attack that\nis certain to strike\nfirst.
+An almost invisibly\nfast lunge that\nis certain to strike\nfirst.
 
 #org @DESC_AQUATAIL
 The foe is attacked\nwith a swinging tail\nas vicious as a\nwave in a storm.
@@ -35,7 +81,7 @@ The user strikes\nwith a tough punch\nthat is certain to\nstrike first.
 The user fires a\nload of electricity\nthat may raise the\nuser's Sp. Atk.  
 
 #org @DESC_CLOSECOMBAT
-The foe is fought\nup close. This cuts\nthe user's Defense\nand Sp. Def.
+The foe is fought\nup close. This cuts\nthe user's Defense\nand Sp. Def stats.
 
 #org @DESC_CROSSPOISON
 An attack with a\nhigh critical-hit\nratio. It may also\npoison the foe.
@@ -44,7 +90,7 @@ An attack with a\nhigh critical-hit\nratio. It may also\npoison the foe.
 The user releases\na horrible aura that\nmay also make the\nfoe flinch.
 
 #org @DESC_DISCHARGE
-The user looses an\nelectric flare that\nhits all Pok\emon\nand may paralyze.         
+The user looses an\nelectric flare that\nhits all Mo\emon\nand may paralyze.         
 
 #org @DESC_DRACOMETEOR
 An intense attack\nthat also sharply\nreduces the user's\nSp. Atk stat.
@@ -89,7 +135,7 @@ The user hurls\nchunks of ice\nthat are certain to\nstrike first.
 The foe is slammed\nwith its hard head.\nIt may also make\nthe foe flinch.
 
 #org @DESC_LAVAPLUME
-Scarlet flames wash\nover all Pok\emon in\nbattle. It may also\ninflict burns.
+Scarlet flames wash\nover all Mo\emon in\nbattle. It may also\ninflict burns.
 
 #org @DESC_MAGNETBOMB
 A steel bomb is\nstuck to the foe.\nIt is sure to hit.
@@ -101,7 +147,7 @@ The foe is struck\nwith a mud ball\nthat may also lower\nits accuracy.
 The user thinks\nbad thoughts. It\nsharply raises the\nSp. Atk stat.
 
 #org @DESC_NIGHTSLASH
-The user slashes\nthe foe when it\ncan. It has a high\ncritical-hit ratio.
+The user slashes the\nfoe when opportune.\nIt has a high\ncritical-hit ratio.
 
 #org @DESC_OMINOUSWIND
 Repulsive wind is\nused to attack. It\nmay also raise all\nthe user's stats.
@@ -152,7 +198,7 @@ The user trades held\nitems with the foe\nfaster than the eye\ncan follow.
 The user rotates\nits body like a\ndrill. It has a high\ncritical-hit ratio.
 
 #org @DESC_BULLDOZE
-The user hits all\nPok\emon in battle\nby stomping. Lowers\nSpeed of those hit.     
+The user hits all\nMo\emon in battle\nby stomping. Lowers\nSpeed of those hit.     
 
 #org @DESC_ELECTROWEB
 The user traps the\nfoe in an electric\nnet. It also lowers\nthe foe's Speed.
@@ -233,13 +279,17 @@ The foe is stabbed\nby sharpened stones.\nIt has a high\ncritical-hit ratio.
 If the user moves\nafter the target,\nthis attack's power\nwill be doubled.
 
 #org @DESC_FIREFANG
-The user bites the\nfoe. It may also\nmake the foe flinch,\nor leave it burned.
+The user bites the\nfoe. It may make\nthe foe flinch or\nleave it burned.
 
 #org @DESC_ICEFANG
-The user bites the\nfoe. It may also\nmake the foe flinch,\nor leave it frozen.
+#ifdef FROSTBITE
+The user bites the\nfoe. It may make\nthe foe flinch or\nleave it frostbitten.
+#else
+The user bites the\nfoe. It may make\nthe foe flinch or\nleave it frozen.
+#endif
 
 #org @DESC_THUNDERFANG
-The user bites the\nfoe. It may also\nmake the foe flinch,\nor paralyze it.     
+The user bites the\nfoe. It may make\nthe foe flinch or\nleave it paralyzed.   
 
 #org @DESC_FLAREBLITZ
 A fiery tackle that\nmay leave the foe\nburned. It also hurts\nthe user a little.
@@ -266,10 +316,10 @@ A nimble attack\nthat does double\ndamage if the user\nhas no held item.
 The user attacks\nthe foe with a\nbursting flame.
 
 #org @DESC_UTURN
-After attacking,\nthe user switches\nplaces with a\nparty Pok\emon.
+After attacking,\nthe user switches\nplaces with a\nparty Mo\emon.
 
 #org @DESC_VOLTSWITCH
-After attacking,\nthe user switches\nplaces with a\nparty Pok\emon.
+After attacking,\nthe user switches\nplaces with a\nparty Mo\emon.
 
 #org @DESC_DRAGONTAIL
 The foe is made to\nswitch out with an\nally. In the wild,\nthe battle ends.
@@ -338,7 +388,7 @@ The foe is attacked\nwith the power of\nthe moon. This may\nlower its Sp. Atk.
 A sweet kiss that\nabsorbs over half\nthe damage inflicted\nto restore HP.
 
 #org @DESC_DAZZLINGGLEAM
-The user damages\nopposing Pok\emon\nby emitting a\npowerful flash.
+The user damages\nopposing Mo\emon\nby emitting a\npowerful flash.
 
 #org @DESC_DISARMINGVOICE
 The user lets out\na charming cry\nthat cannot be\nevaded.
@@ -350,19 +400,19 @@ Levitating rocks\nare laid around the\nfoe's party to hurt\nfoes switching in.
 Poisoned spikes\nare laid around the\nfoe's party to hurt\nfoes switching in.
 
 #org @DESC_HEALINGWISH
-The user faints,\nbut will fully\nheal the Pok\emon\ntaking its place.
+The user faints,\nbut will fully\nheal the Mo\emon\ntaking its place.
 
 #org @DESC_LUNARDANCE
-The user faints,\nbut will fully\nheal the Pok\emon\ntaking its place.
+The user faints,\nbut will fully\nheal the Mo\emon\ntaking its place.
 
 #org @DESC_TAILWIND
-Whips up a tailwind\nthat ups the Speed\nof all party Pok\emon\nfor four turns.
+Whips up a tailwind\nthat ups the Speed\nof all party Mo\emon\nfor four turns.
 
 #org @DESC_BOOMBURST
 The user emits a\nterrible soundwave\nthat hits everything\naround it.
 
 #org @DESC_INCINERATE
-The user burns\nthe foe completely,\nrendering a held\nBerry useless.
+The user burns\nthe foe completely,\nrendering a held Gem\nor Berry useless.
 
 #org @DESC_WORRYSEED
 A worrying seed is\nplanted on the foe,\nmaking its ability\nInsomnia.
@@ -374,10 +424,10 @@ Stomach acid is\nhurled onto the\nfoe, suppressing\nits ability.
 The user's Sp. Atk,\nSp. Def, and Speed\nrise sharply on the\nsecond turn.
 
 #org @DESC_FLOWERSHIELD
-The Defense stat\nof all Grass-type\nPok\emon is raised\nby a strange power.
+The Defense stat\nof all Grass-type\nMo\emon is raised\nby a strange power.
 
 #org @DESC_ROTOTILLER
-The Attack and\nSp. Atk stats of\nall Grass-type\nPok\emon are raised.
+The Attack and\nSp. Atk stats of\nall Grass-type\nMo\emon are raised.
 
 #org @DESC_SHIFTGEAR
 Rotating its gears,\nthe user raises its\nAttack and sharply\nraises its Speed.
@@ -443,7 +493,11 @@ A physical attack\nin which the user\ncharges, full body,\ninto the foe.
 An attack which\nchanges type,\ndepending on which\nkind of Plate the\nuser is holding.
 
 #org @DESC_FREEZEDRY
+#ifdef FROSTBITE
+An attack which may\nleave the foe with\nfrostbite. It is also\nsuper effective on\nWater-types.
+#else
 An attack which may\nleave the target\nfrozen. It is also\nsuper effective on\nWater types.
+#endif
 
 #org @DESC_PSYSHOCK
 An odd psychic wave\nattacks the target.\nThis attack does\nphysical damage.
@@ -452,7 +506,7 @@ An odd psychic wave\nattacks the target.\nThis attack does\nphysical damage.
 The user attacks\nwith a song. Others\ncan join in, doing\nmore damage.
 
 #org @DESC_TAILSLAP
-The use attacks by\nhitting the target\nwith its hard tail.\nIt hits two to five\ntimes in a row.
+The user attacks by\nhitting the target\nwith its hard tail.\nIt hits two to five\ntimes in a row.
 
 #org @DESC_GEARGRIND
 The user attacks by\nthrowing two steel\ngears at it target.\nThis attack hits\ntwice in a row.
@@ -464,7 +518,7 @@ The type and base\npower of this move\nis determined by\nthe user's Berry.
 An attack which is\nnot affected by the\ntarget's stat\nchanges.
 
 #org @DESC_SMACKDOWN
-A projectile is\nthrown at the\nopponent. A flying\nPok\emon will fall\nto the ground.
+A projectile is\nthrown at the\nopponent. A flying\nMo\emon will fall\nto the ground.
 
 #org @DESC_HYPERSPACEHOLE
 The user attacks\nfrom a hyperspace\nhole, hitting even\nprotected targets.
@@ -491,10 +545,10 @@ If the foe is the\nopposite gender of\nthe user, the foe's\nSpecial Attack is\nh
 A strong wind blows\naway the target's\nobstacles. It also\nlowers the target's\nevasiveness.
 
 #org @DESC_ORIGINPULSE
-The user attacks\nopposing Pok\emon\nwith countless\nbeams of light that\nglow a deep blue.
+The user attacks\nopposing Mo\emon\nwith countless\nbeams of light that\nglow a deep blue.
 
 #org @DESC_PRECIPICEBLADES
-The user attacks\nopposing Pok\emon by\nmanifesting the\npower of the land\nin blades of stone.
+The user attacks\nopposing Mo\emon by\nmanifesting the\npower of the land\nin blades of stone.
 
 #org @DESC_GUARDSWAP
 The user uses its\npsychic power to\nswitch changes to\nits Defense and Sp.\nDef with the foe.
@@ -539,13 +593,13 @@ The area around the\nuser is swamped by\na giant sludge wave.\nIt may also poiso
 The user slams into\nthe target. The\ngreater the weight\ndifference, the\ngreater the damage.
 
 #org @DESC_SYNCHRONOISE
-Using an odd shock\nwave, the user\ndamages same-type\nPok\emon in the\nsurrounding area.
+Using an odd shock\nwave, the user\ndamages same-type\nMo\emon in the\nsurrounding area.
 
 #org @DESC_ELECTROBALL
 The user hurls an\nelectric orb. The\nfaster the user is\nthan the foe, the\ngreater the damage.
 
 #org @DESC_FOULPLAY
-The user turns the\ntarget's power\nagainst it. Power\nincreases with the\nfoe's Attack stat.
+The user turns the\nfoe's power against\nit. This uses the\nfoe's Attack stat.
 
 #org @DESC_ENTRAINMENT
 The user dances\nwith an odd rhythm,\nmaking the target's\nAbility the same as\nthe user's Ability.
@@ -557,7 +611,7 @@ The user releases a\npitch-black blast\nat its target. May\nalso lower target's\
 The user attacks\nthe target with a\nharsh echo.\nIf used every turn,\npower increases.
 
 #org @DESC_LANDSWRATH
-The user gathers\nenergy from the\nland and damages\nthe opposing Pok\emon\nwith its power.
+The user gathers\nenergy from the\nland and damages\nthe opposing Mo\emon\nwith its power.
 
 #org @DESC_OBLIVIONWING
 The user absorbs its\ntarget's HP. The\nuser's HP is restored\nby over half the\ndamage.
@@ -587,7 +641,7 @@ The user sings an\nancient song and\nattacks the hearts of\nthe listeners. It\nm
 The user cuts with\nits long horn. The\nodd power in the\nhorn does physical\ndamage to the foe.
 
 #org @DESC_GLACIATE
-The user attacks by\nblowing freezing cold\nair at opposing\nPok\emon. This lowers\ntheir Speed.
+The user attacks by\nblowing freezing cold\nair at opposing\nMo\emon. This lowers\ntheir Speed.
 
 #org @DESC_BOLTSTRIKE
 The user surrounds\nitself with abundant\nelectricity that can\nparalyze and charges\nits target.
@@ -632,10 +686,10 @@ If the target has\nalready used its\nmove this turn, it\nnullifies the effect\no
 The user attacks the\ntarget with sound\nwaves of deafening\nchatter. This\nconfuses the target.
 
 #org @DESC_CONFIDE
-The user tells the\nfoe a secret, and it\nloses concentration.\nIt lowers the foe's\nSp.Atk stat.
+The user tells the\nfoe a secret and it\nloses concentration.\nThis lowers Sp. Atk.
 
 #org @DESC_WATERSHURIKEN
-The user hits the foe\nwith throwing stars\ntwo to five times in\na row. This always\ngoes first.
+The user throws stars\nat the foe 2 to 5\ntimes in a row. This\nalways strikes first.
 
 #org @DESC_MYSTICALFIRE
 The user attacks by\nbreathing a special,\nhot fire. This also\nlowers the target's\nSp. Atk stat.
@@ -656,7 +710,7 @@ The foe is infested\nand attacked for four\nto five turns. The\ntarget can't fle
 Striking over and\nover hardens the\nuser's fists.\nHitting a target\nraises Attack.
 
 #org @DESC_THOUSANDARROWS
-This move also hits\nopposing Pok\emon in\nthe air. They are\nknocked down to the\nground.
+This move also hits\nopposing Mo\emon in\nthe air. They are\nknocked down to the\nground.
 
 #org @DESC_THOUSANDWAVES
 The user attacks with\na wave that crawls\nalong the ground.\nThose hit can't flee\nfrom battle.
@@ -665,7 +719,7 @@ The user attacks with\na wave that crawls\nalong the ground.\nThose hit can't fl
 The user attacks\neverything around it.\nThe user's HP is\nrestored by half the\ndamage.
 
 #org @DESC_SEARINGSHOT
-The user torches\neverything around it\nin an inferno of\nscarlet flames. It\nmay burn the foes.
+The user torches\neverything around it\nin an inferno of\nscarlet flames.\nIt may cause burns.
 
 #org @DESC_SEEDFLARE
 The user emits a\nshock wave from its\nbody. This may also\nharshly lower the\ntarget's Sp. Def.
@@ -683,7 +737,7 @@ This move reduces\ndamage from physical\nand special moves for\nfive turns durin
 Aside from protecting\nthe user from attacks,\nthis also poisons\nattackers who make\ncontact.
 
 #org @DESC_BEAKBLAST
-The user heats up its\nbeak, and attacks the\ntarget. Making contact\nwhile heating up\ncauses a burn.
+The user heats up its\nbeak and attacks.\nContact during heating\ncauses a burn.
 
 #org @DESC_BRUTALSWING
 The user swings its\nbody around violently\nto inflict damage on\neverything in its\nvicinity.
@@ -755,13 +809,13 @@ The user shoots\npowerful lasers using\nprism power. The\nuser can't move on\nth
 The user bites the\ntarget with psychic\ncapabilities. This\ndestroys Light\nScreen and Reflect.
 
 #org @DESC_PURIFY
-The user heals the\ntarget's status\ncondition. If the move\nsucceeds, it also\nheals the user's HP.
+The user heals the\ntarget's status\ncondition. If this\nsucceeds, it also\nheals the user's HP.
 
 #org @DESC_REVELATIONDANCE
 The user attacks the\ntarget by dancing\nvery hard. The user's\ntype determines this\nmove's type.
 
 #org @DESC_SHADOWBONE
-The user attacks by\nbeating the foe with\na bone that has a\nspirit. It may lower\nDefense.
+The user attacks the\nfoe with a bone of\nspirit. It may lower\nthe foe's Defense.
 
 #org @DESC_SHELLTRAP
 The user sets a\nshell trap. If the\nuser is hit by a\nphysical move, the\ntrap will explode.
@@ -776,10 +830,10 @@ The user stabs the\ntarget with a sharp\nhorn. This attack\nnever misses.
 In this two-turn move,\nthe user gathers\nlight and fills a\nblade with light's\nenergy to attack.
 
 #org @DESC_SPARKLINGARIA
-The user bursts into\nsong, emitting\nbubbles. Any burnt\nPok\emon will be\nhealed.
+The user bursts into\nsong, emitting\nbubbles. Any burnt\nMo\emon will be\nhealed.
 
 #org @DESC_SPECTRALTHIEF
-The user hides in\nthe target's shadow,\nsteals the target's\nstat boosts,and\nthen attacks.
+The user hides in\nthe target's shadow,\nsteals the target's\nstat boosts, and\nthen attacks.
 
 #org @DESC_SPEEDSWAP
 The user exchanges\nSpeed stats with\nthe target.
@@ -791,7 +845,7 @@ The user attacks\nwhile stitching the\ntarget's shadow to\nthe ground to\npreven
 The user shines a\nspotlight on the\ntarget so that only\nthe target will be\nattacked.
 
 #org @DESC_STOMPINGTANTRUM
-If the user's\nprevious moves has\nfailed, the power\nof this move\ndoubles.
+If the previous move\nfailed, frustration\ndoubles the power of\nthis move.
 
 #org @DESC_STRENGTHSAP
 The user drains HP\nequal to the foe's\nAttack stat. It\nalso lowers the\nfoe's Attack stat.
@@ -809,7 +863,7 @@ The user attacks the\nfoe's throat to\nprevent it from\nusing moves that emit\ns
 The user shoots\npoisonous threads to\npoison the target\nand lower the\ntarget's Speed stat.
 
 #org @DESC_TROPKICK
-The user lands an\nintense kick of\ntropical origins on\nthe target. It\nlowers Attack.
+The user lands a\ntropical kick on the\nfoe. It also lowers\nthe foe's Attack.
 
 #org @DESC_ZINGZAP
 A strong electric\nblast crashes down\non the target. This\nmay make the target\nflinch.
@@ -827,22 +881,22 @@ The user covers the\nground in mist for\nfive turns, halving\nDragon moves and\n
 The user makes the\nground weird for\nfive turns, boosting\nPsychic moves and\nblocking priority.
 
 #org @DESC_GRASSPLEDGE
-When used with its\nwater equivalent,\nits power increases\nand a vast swamp\nappears.
+When combined with\nWater Pledge, its\npower increases and\na vast swamp appears.
 
 #org @DESC_FIREPLEDGE
-When used with its\ngrass equivalent,\nits power increases\nand a vast sea of\nfire appears.
+When combined with\nGrass Pledge, its\npower increases and a\nsea of fire appears.
 
 #org @DESC_WATERPLEDGE
-When combined with\nits fire equivalent,\nits power increases\nand a rainbow\nappears.
+When combined with\nFire Pledge, its\npower increases and\na rainbow appears.
 
 #org @DESC_TRICKROOM
-The user creates a\nbizarre area in\nwhich slower Pok\emon\nget to move first\nfor five turns.
+The user creates a\nbizarre area in\nwhich slower Mo\emon\nget to move first\nfor five turns.
 
 #org @DESC_MAGICROOM
-The user creates a\nbizarre area in\nwhich Pok\emon's held\nitems lose effect\nfor five turns.
+The user creates a\nbizarre area in\nwhich Mo\emon's held\nitems lose effect\nfor five turns.
 
 #org @DESC_WONDERROOM
-The user creates a\nbizarre area where\nPok\emon's Defense\nand Sp. Def swap\nfor five turns.
+The user creates a\nbizarre area where\nMo\emon's Defense\nand Sp. Def swap\nfor five turns.
 
 #org @DESC_CRAFTYSHIELD
 The user protects\nitself and its\nallies from status\nmoves with a\nmysterious power.
@@ -860,7 +914,7 @@ The user protects\nitself and its\nallies from wide-\nranged attacks.
 The user envelops\nitself in a veil\nmade of water. It\nregains some HP\nevery turn.
 
 #org @DESC_AROMATICMIST
-The user raises the\nSp. Def stat of an\nally Pok\emon by\nusing a mysterious\naroma.
+The user raises the\nSp. Def stat of an\nally Mo\emon by\nusing a mysterious\naroma.
 
 #org @DESC_BELCH
 The user lets out a\ndamaging belch at\nthe target. The user\nmust eat a held\nBerry to use this.
@@ -938,7 +992,7 @@ If the target is\nelectrified before\nits move in the turn,\nthe target's move\n
 It prevents the\ntarget from using\nitems. Its Trainer\nalso can't use\nitems on it.
 
 #org @DESC_FAIRYLOCK
-By locking down the\nbattlefield, the\nuser keeps all\nPok\emon from fleeing\nduring the next turn.
+By locking down the\nbattlefield, the\nuser keeps all\nMo\emon from fleeing\nduring the next turn.
 
 #org @DESC_LIGHTOFRUIN
 The user fires a\npowerful beam of\nlight from the\nEternal Flower. This\ndamages the user.
@@ -968,7 +1022,7 @@ It can only be\nused after the\nuser has exhausted\nall other moves it\nknows in
 It takes the enemy\ninto the sky,\nwhere it can't\nattack. It is\ndropped next turn.
 
 #org @DESC_CELEBRATE
-The Pok\emon\ncongratulates you\non your special\nday!
+The Mo\emon\ncongratulates you\non your special\nday!
 
 #org @DESC_HOLDHANDS
 The user and an\nally hold hands.\nThis makes them\nvery happy.
@@ -998,7 +1052,7 @@ The user scatters\nmagic powder that\nchanges the target\ninto a Psychic-type.
 The user attacks\ntwice. If there\nare two targets,\neach is hit once.
 
 #org @DESC_TEATIME
-All Pok\emon on the\nfield have teatime.\nEach Pok\emon eats\nits held Berry.
+All Mo\emon on the\nfield have teatime.\nEach Mo\emon eats\nits held Berry.
 
 #org @DESC_OCTOLOCK
 The user traps the\nfoe and makes its\nDefense and Sp. Def\nfall each turn.
@@ -1037,10 +1091,10 @@ The user becomes a\nsword and strikes.\nDouble damage on\nDynamaxed targets.
 The user becomes a\nshield and strikes.\nDouble damage on\nDynamaxed targets.
 
 #org @DESC_AURA_WHEEL
-Morpeko raises its\nSpeed and attacks.\nThe move's Type is\nbased on its form.
+Morpeko raises its\nSpeed and attacks.\nThe move's type is\nbased on its form.
 
 #org @DESC_BREAKING_SWIPE
-The user attacks\nby swinging its\ntail, lowering the\nboth targets' Attack.
+The user attacks the\nfoes by swinging its\ntail wildly, lowering\ntheir Attack.
 
 #org @DESC_BRANCH_POKE
 The user attacks\nthe target by\npoking it with a\npointed branch.
@@ -1082,7 +1136,7 @@ It fires a beam\nof steel from its\nbody, which also\nhurts the user.
 The move's power\nincreases and damages\nall opposing targets\nin Psychic Terrain.
 
 #org @DESC_STEEL_ROLLER
-The user attacks\nwhile destroying terrain.\nThe move fails if\nthere's no terrain.
+The user attacks and\ndestroys the terrain.\nThe move fails if\nthere is no terrain.
 
 #org @DESC_SCALE_SHOT
 It hits two to five\ntimes in a row.\nRaises Speed, but\nlowers Defense.
@@ -1091,16 +1145,16 @@ It hits two to five\ntimes in a row.\nRaises Speed, but\nlowers Defense.
 In this two-turn move,\nthe user gathers\nspace power and\nincreases Sp. Atk.
 
 #org @DESC_SHELL_SIDE_ARM
-Inflicts the more\neffective of physical\nor special damage. May\npoison the target.
+Inflicts the more\neffective of physical\nor special damage.\nMay poison the foe.
 
 #org @DESC_MISTY_EXPLOSION
-The user explodes,\nfainting in the process.\nIts power doubles\non Misty Terrain.
+The user explodes\nand faints itself.\nIts power increases\non Misty Terrain.
 
 #org @DESC_GRASSY_GLIDE
-The user glides\non the ground to\nattack. Will move\nfirst on Grassy Terrain.
+The user glides\non the ground to\nattack. Hits first\non Grassy Terrain.
 
 #org @DESC_RISING_VOLTAGE
-The user attacks\nwith voltage from the\nground. It doubles in\npower on Electric Terrain.
+The user attacks with\nearthly voltage. It\ndoubles in power on\nElectric Terrain.
 
 #org @DESC_TERRAIN_PULSE
 The move's type\nand power depends on\nthe terrain currently\nused in battle.
@@ -1109,13 +1163,13 @@ The move's type\nand power depends on\nthe terrain currently\nused in battle.
 The user skitters\nbehind the target to\nattack. It lowers the\nfoe's Sp.Atk stat.
 
 #org @DESC_BURNING_JEALOUSY
-Inflicts a burn\non targets who's stats\nwere boosted during the\nturn when it is used.
+Inflicts a burn on\ntargets that had\ntheir stats boosted\nduring the turn used.
 
 #org @DESC_LASH_OUT
-The move's power\ndoubles if the user's\nstats have been lowered\nduring the turn.
+The move's power\ndoubles if the user's\nstats have fallen\nduring the turn.
 
 #org @DESC_POLTERGEIST
-The user controls\nthe target's item to\nattack. Fails if\nthe target has no item.
+The user controls\nthe target's item to\nattack. Fails if the\ntarget has no item.
 
 #org @DESC_CORROSIVE_GAS
 The user cloaks\nitself in acidic gas.\nIt melts away the\ntarget's held item.
@@ -1124,7 +1178,7 @@ The user cloaks\nitself in acidic gas.\nIt melts away the\ntarget's held item.
 The user coaches\nits ally, raising\nthe ally's Attack\nand Defense stats.
 
 #org @DESC_FLIP_TURN
-After attacking,\nthe user switches\nplaces with a\nparty Pok\emon.
+After attacking,\nthe user switches\nplaces with a\nparty Mo\emon.
 
 #org @DESC_TRIPLE_AXEL
 A 3-kick attack\nthat becomes more\npowerful with each\nsuccessive hit.
@@ -1133,7 +1187,7 @@ A 3-kick attack\nthat becomes more\npowerful with each\nsuccessive hit.
 The user slams\nthe target with its\nwings. The target is\nhit twice in a row.
 
 #org @DESC_SCORCHING_SANDS
-The user throws\nscorching sand at the\ntarget. It may also\ninflict burns.
+The user throws\nscorching sand at the\ntarget. It may also\ninflict a burn.
 
 #org @DESC_JUNGLE_HEALING
 The user restores\nHP and the status\nof itself and its\nally in battle.
@@ -1142,22 +1196,116 @@ The user restores\nHP and the status\nof itself and its\nally in battle.
 The user strikes\nthe foe fiercely.\nIt always results in\na critical hit.
 
 #org @DESC_SURGING_STRIKES
-The user strikes\nthree consecutive times.\nIt always results in\na critical hit.
+The user strikes\nthree times in a row.\nIt always results in\na critical hit.
 
 #org @DESC_FREEZING_GLARE
+#ifdef FROSTBITE
+The user attacks\nwith psychic power.\nIt may leave the\ntarget with frostbite.
+#else
 The user attacks\nwith psychic power.\nIt may leave the\ntarget frozen.
+#endif
 
 #org @DESC_THUNDEROUS_KICK
-The user delivers\na fierce kick that\nlower's the target's\ndefense stat.
+The user delivers\na fierce kick that\nlowers the target's\ndefense stat.
 
 #org @DESC_FIERY_WRATH
-The user attacks\nwith intense, dark flames.\nIt may also make\nthe foe flinch.
+The user attacks with\nintense, dark flames.\nIt may also make\nthe foe flinch.
+
+#org @DESC_EERIE_SPELL
+The user attacks with\npsychic power that\nremoves 3 PP from\nthe foe's last move.
 
 #org @DESC_THUNDER_CAGE
 A cage made of\nelectricity that traps\nthe target for four\nto five turns.
 
 #org @DESC_DRAGON_ENERGY
 The higher the\nuser's HP, the\nmore powerful this\nattack becomes.
+
+#org @DESC_ASTRAL_BARRAGE
+A frightful amount of\nsmall ghosts are sent\nto attack opposing\nMo\emon.
+
+#org @DESC_GLACIAL_LANCE
+The user attacks by\nhurling a blizzard-\ncloaked icicle lance\nat opposing Mo\emon.
+
+#org @DESC_DIRE_CLAW
+A slash that may\npoison, paralyze, or\nsleep the foe. It\nhas a high crit ratio.
+
+#org @DESC_PSYSHIELD_BASH
+The user slams into\nthe foe with psychic\nenergy. It raises the\nuser's Defense too.
+
+#org @DESC_POWER_SHIFT
+The user swaps its\noffensive and\ndefensive stats.
+
+#org @DESC_STONE_AXE
+The foe is hit with\nan axe that leaves\nbehind splinters. It\nhas a high crit ratio.
+
+#org @DESC_MYSTICAL_POWER
+After dealing damage,\nthe user raises the\nhigher stats of its\noffenses or defenses.
+
+#org @DESC_RAGING_FURY
+The user rampages\nand spews vicious\nflames for two to\nthree turns.
+
+#org @DESC_WAVE_CRASH
+The user slams into\nthe target, hurting\nitself a little. This\nmove strikes first.
+
+#org @DESC_CHLOROBLAST
+The user launches its\namassed chlorophyll\nat the foe. This also\nhurts the user.
+
+#org @DESC_MOUNTAIN_GALE
+The user hurls giant\nchunks of ice at\nthe foe that may\ncause it to flinch.
+
+#org @DESC_VICTORY_DANCE
+The user dances to\nusher in victory.\nThis raises Attack,\nDefense, and Speed.
+
+#org @DESC_HEADLONG_RUSH
+The user smashes into\nthe foe. This cuts\nthe user's Defense\nand Sp. Def stats.
+
+#org @DESC_BARB_BARRAGE
+Barbs that may poison\nare shot at the foe.\nIts power doubles if\nthe foe is poisoned.
+
+#org @DESC_ESPER_WING
+//The foe is slashed\nwith wings of light.\nThis has a high crit\nratio and goes first.
+The foe is slashed\nwith wings of light.\nThis goes first and\nhas a high crit ratio.
+
+#org @DESC_BITTER_MALICE
+#ifdef FROSTBITE
+The user attacks and\nmay inflict the foe\nwith frostbite. Its\npower doubles if the\nfoe has frostbite.
+#else
+Resentment that may\nfreeze hits the foe.\nIts power doubles if\nthe foe is frozen.
+#endif
+
+#org @DESC_SHELTER
+The user makes its\nskin iron-hard to\nraise its Defense\nand its Speed.
+
+#org @DESC_TRIPLE_ARROWS
+The foe is shot with\narrows that raise the\ncrit ratio and lower\nthe foe's Defense.
+
+#org @DESC_INFERNAL_PARADE
+Myriad fireballs that\nmay burn hit the foe.\nIts power doubles if\nthe foe is burned.
+
+#org @DESC_CEASELESS_EDGE
+The foe is slashed.\nThis leaves behind\nsplinters. It has a\nhigh crit ratio.
+
+#org @DESC_BLEAKWIND_STORM
+#ifdef FROSTBITE
+The user attacks\nwith savagely cold\nwinds. This may\ncause a frostbite.
+#else
+The user attacks\nwith savagely cold\nwinds. This may\nfreeze the foe.
+#endif
+
+#org @DESC_WILDBOLT_STORM
+The user savagely\nattacks with wind\nand lightning. This\nmay cause paralysis.
+
+#org @DESC_SANDSEAR_STORM
+The user attacks\nwith fierce winds\nand hot sand. This\nmay cause a burn.
+
+#org @DESC_SPRINGTIDE_STORM
+The user attacks\nwith love and hate.\nThe effects depend\non the user's form.
+
+#org @DESC_LUNAR_BLESSING
+The user heals its\nown statuses and\nrestores HP. It also\nraises evasiveness.
+
+#org @DESC_TAKE_HEART
+The user heals its\nown statuses and\nraises its Sp. Atk\nand Sp. Def.
 
 #org @DESC_MAX_GUARD
 Enables the user to\nevade all attacks.\nIt may fail if used\nin succession.
@@ -1175,7 +1323,7 @@ Electric Dynamax\nmove. It activates\nElectric Terrain\nfor five turns.
 Normal-Type Dynamax\nmove. It lowers\nthe target's Speed\nstat.
 
 #org @DESC_MAX_KNUCKLE
-Fighting Dynamax\nmove. It raises\nally Pok\emon's\nAttack stats.
+Fighting Dynamax\nmove. It raises\nally Mo\emon's\nAttack stats.
 
 #org @DESC_MAX_PHANTASM
 Ghost-Type Dynamax\nmove. It lowers\nthe target's\nDefense stat.
@@ -1184,13 +1332,13 @@ Ghost-Type Dynamax\nmove. It lowers\nthe target's\nDefense stat.
 Ice-Type Dynamax\nmove. It summons\na hailstorm for\nfive turns.
 
 #org @DESC_MAX_OOZE
-Poison-Type Dynamax\nmove. It raises\nally Pok\emon's\nSp. Atk stats.
+Poison-Type Dynamax\nmove. It raises\nally Mo\emon's\nSp. Atk stats.
 
 #org @DESC_MAX_GEYSER
 Water-Type Dynamax\nmove. It summons\nrain that falls\nfor five turns.
 
 #org @DESC_MAX_AIRSTREAM
-Flying-Type Dynamax\nmove. It raises\nally Pok\emon's\nSpeed stats.
+Flying-Type Dynamax\nmove. It raises\nally Mo\emon's\nSpeed stats.
 
 #org @DESC_MAX_STARFALL
 Fairy-Type Dynamax\nmove. It activates\nMisty Terrain for\nfive turns.
@@ -1205,7 +1353,7 @@ Psychic Dynamax\nmove. It activates\nPsychic Terrain\nfor five turns.
 Rock-Type Dynamax\nmove. It summons\na sandstorm that\nlasts five turns.
 
 #org @DESC_MAX_QUAKE
-Ground-Type Dynamax\nmove. It raises\nally Pok\emon's\nSp. Def stats.
+Ground-Type Dynamax\nmove. It raises\nally Mo\emon's\nSp. Def stats.
 
 #org @DESC_MAX_DARKNESS
 Dark-Type Dynamax\nmove. It lowers\nthe target's\nSp. Def stat.
@@ -1214,7 +1362,7 @@ Dark-Type Dynamax\nmove. It lowers\nthe target's\nSp. Def stat.
 Grass-Type Dynamax\nmove. It activates\nGrassy Terrain for\nfive turns.
 
 #org @DESC_MAX_STEELSPIKE
-Steel-Type Dynamax\nmove. It raises\nally Pok\emon's\nDefense stats.
+Steel-Type Dynamax\nmove. It raises\nally Mo\emon's\nDefense stats.
 
 #org @DESC_G_MAX_VINE_LASH
 G-Max Venusaur's\nsignature move. It\ndeals damage for\nfour turns.

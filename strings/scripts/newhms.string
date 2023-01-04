@@ -1,0 +1,655 @@
+#org @gText_newcut_Nocut
+This tree looks like it can be Cut\ndown!
+
+#org @gText_newstrength_Cantpush
+It's a big boulder, but you may learn\nto push it aside[.]
+
+#org @gText_newstrength_Madeitpossible
+Strength made it possible to move\nboulders around.
+
+#org @gText_newstrength_Strengthtxt
+HM Strength made it possible to\nmove boulders around!
+
+#org @gText_newrocksmash_Nosmash
+It's a rugged rock, but a [GREEN]Mo\emon[BLUE]\nmay be able to smash it.
+
+#org @gText_SoulDew_1
+This cave has a strange property,\naccording to my reasearch, it is\ltied to the movement of the sea.\lDuring my research I have found\lthis jewel, it began glowing once\lyou entered the cave, I think it\lmay be calling for you, do you\lwant it?
+
+#org @gText_SoulDew_2
+That's okay. I'll save it for you.
+
+#org @gText_SoulDew_3
+I'm sure this jewel will be in\nthe right hands.
+
+#org @gText_StarterEffective_Question
+It has been a wild ride... I\ntraveled this region for a long\ltime, and it's almost time to\lretire, I may have to find a job\land settle down. But now I don't\lknow what to do with this\l[GREEN]Mo\emon[BLUE]. Do you think you can\ltake care of it?
+
+#org @gText_StarterEffective_Saidnomsg
+I'll wait for you[.]
+
+#org @gText_StarterEffective_Fullmsg
+Your party is full, come back\nlater.
+
+#org @gText_StarterEffective_Donemsg
+It is almost time, but I really\nlike this view.
+
+#org @gText_StarterEffective_Take
+Thanks, kid!
+
+#org @gText_StarterEffective_Bulba
+[BLACK][PLAYER] obtained a Bulbasaur!
+
+#org @gText_StarterEffective_Char
+[BLACK][PLAYER] obtained a Charmander!
+
+#org @gText_StarterEffective_Squirt
+[BLACK][PLAYER] obtained a Squirtle!
+
+#org @gText_StarterEffective_Nick
+Would you like to give a\nnickname to this [GREEN]Mo\emon[BLUE]?
+
+#org @gText_StarterWeak_Question
+It is pleasing to see young\npeople running around here, it\lreminds me to my days of youth...\lI have found recently this little\lcute thing, but I'm too old to\lkeep it around. I would be happy\lif someone like you took care of\lit, do you think you are suited\lfor the job?
+
+#org @gText_StarterWeak_Saidnomsg
+How unfortunate[.]
+
+#org @gText_StarterWeak_Fullmsg
+Oh, dear, your party is full, come\nback later.
+
+#org @gText_StarterWeak_Donemsg
+Please, don't get in trouble.
+
+#org @gText_StarterWeak_Take
+Oh, I'm so glad!
+
+#org @gText_StarterWeak_Bulba
+[BLACK][PLAYER] obtained a Bulbasaur!
+
+#org @gText_StarterWeak_Char
+[BLACK][PLAYER] obtained a Charmander!
+
+#org @gText_StarterWeak_Squirt
+[BLACK][PLAYER] obtained a Squirtle!
+
+#org @gText_StarterWeak_Nick
+Would you like to give a\nnickname to this [GREEN]Mo\emon[BLUE]?
+
+#org @gText_Tickets_1
+Hey, nice to see you, champion,\nI've got some neat stuff for \pyou! Good luck!
+
+#org @gText_Tickets_Msg
+These tickets will give you\naccess to unexplored places.
+
+#org @gText_EggShop_Msg1
+Hello, welcome to our Egg Shop!\nI sell rare and valuable eggs in\lneed of a new trainer, it will cost \$15000, would you like to buy one?
+
+#org @gText_EggShop_Msg2
+You don't have enough money.
+
+#org @gText_EggShop_Msg3
+[PLAYER] received a [GREEN]Moémon Egg[BLUE]!
+
+#org @gText_EggShop_Fullmsg
+Sorry, your party is full, come\nback later.
+
+#org @gText_EVIVWelcome_Msg
+Welcome!
+
+#org @gText_mysterygift_Msg
+Do you want to enter a password?
+
+#org @gText_mysterygift_Msgno
+Come back to enter a password.
+
+#org @gText_mysterygift_NotValidPassword
+That Password is not valid.
+
+#org @gText_mysterygift_ValidPassword
+That password is correct.
+
+#org @gText_mysterygift_UsedPassword
+That password has already been used.
+
+#org @gText_mysterygift_ReceivedGift1
+You received a Pikachu.
+
+#org @gText_mysterygift_ReceivedGift2
+You received a Charmander.
+
+#org @gText_mysterygift_Pass1
+Pikachu
+
+#org @gText_mysterygift_Pass2
+Charmander
+
+#org @gText_LevelCapsDisable
+Would you like to disable \n[RED]Level Caps[BLACK]?
+
+#org @gText_LevelCapsEnable
+Would you like to enable [RED]Level Caps[BLACK]?
+
+#org @gText_LevelCapsDisabled
+[RED]Level Caps[BLACK] disabled.
+
+#org @gText_ByeThen
+Goodbye then.
+
+#org @gText_ManaphyEvent_FirstDialogue
+Excuse me, young trainer, do you\nhave a minute?\pIt's been a while since I saw a\nnew face around here, I don't\lhave many people to talk with. My\lson is sailing around the world\land exploring all kind of places,\las someone who spent all his\llife here it's hard to imagine...\lAh, I'm rambling again. Thanks\lfor listening me.\pCome see me if you become the\nLeague Champion.
+
+#org @gText_ManaphyEvent_SecondDialogue
+My son left me this keepsake of\none of his adventures. Probably a\lyounger person could be more\lsuitable to take care of it.
+
+#org @gText_ManaphyEvent_TryLater
+Hmmm... You're probably not ready\nyet.
+
+#org @gText_ManaphyEvent_Worthy
+Do you think you are up for the\ntask?
+
+#org @gText_ManaphyEvent_Saidnomsg
+I'll be here until you think you\nare ready.
+
+#org @gText_ManaphyEvent_Fullmsg
+Your party is full, come back\nlater.
+
+#org @gText_ManaphyEvent_Donemsg
+Take care of her. This is a very\nspecial [GREEN]Mo\emon[BLUE].
+
+#org @gText_ManaphyEvent_Take
+Wonderful!
+
+#org @gText_ManaphyEvent_Mana
+[BLACK][PLAYER] obtained a Manaphy!
+
+#org @gText_ManaphyEvent_Nick
+[BLACK]Would you like to give a\nnickname to this [GREEN]Mo\emon[BLUE]?
+
+#org @gText_ManaphyEvent_Final
+Hey, young trainer. Hope you are\ndoing well, how is the Princess\ldoing?
+
+#org @gText_SetBalls1 
+Hi, I can switch the Pok\e Ball\nof your [GREEN]Mo\emon[BLUE].\pInterested? 
+
+#org @gText_SetBallsMaster 
+Master Ball 
+
+#org @gText_SetBallsUltra
+Ultra Ball
+
+#org @gText_SetBallsGreat
+Great Ball
+
+#org @gText_SetBallsPoke
+Pok\e Ball 
+
+#org @gText_SetBallsSafari
+Safari Ball 
+
+#org @gText_SetBallsNet
+Net Ball 
+
+#org @gText_SetBallsDive
+Dive Ball 
+
+#org @gText_SetBallsNest
+Nest Ball 
+
+#org @gText_SetBallsRepeat
+Repeat Ball 
+
+#org @gText_SetBallsTimer
+Timer Ball 
+
+#org @gText_SetBallsLuxury
+Luxury Ball 
+
+#org @gText_SetBallsPremier
+Premier Ball 
+
+#org @gText_SetBallsDusk
+Dusk Ball 
+
+#org @gText_SetBallsHeal
+Heal Ball 
+
+#org @gText_SetBallsQuick
+Quick Ball
+
+#org @gText_SetBallsCherish
+Cherish Ball
+
+#org @gText_SetBallsPark 
+Park Ball 
+
+#org @gText_SetBallsFast
+Fast Ball 
+
+#org @gText_SetBallsLevel
+Level Ball 
+
+#org @gText_SetBallsLure
+Lure Ball 
+
+#org @gText_SetBallsHeavy
+Heavy Ball 
+
+#org @gText_SetBallsLove
+Love Ball 
+
+#org @gText_SetBallsFriend
+Friend Ball
+
+#org @gText_SetBallsMoon
+Moon Ball 
+
+#org @gText_SetBallsSport
+Sport Ball 
+
+#org @gText_SetBallsBeast
+Beast Ball 
+
+#org @gText_SetBallsDream
+Dream Ball 
+
+#org @gText_SetBallsExit
+Exit 
+
+#org @gText_PokeBall_Which
+Which Ball would you like?
+
+#org @gText_POkeBall_Done
+Aaaaand[.]\nDone! Enjoy. 
+
+#org @gText_ViewMore
+View More 
+
+#org @gText_Howdy
+Howdy There
+
+#org @gText_25
+Lv.25
+#org @gText_35
+Lv.35
+#org @gText_45
+Lv.45
+#org @gText_55
+Lv.55
+#org @gText_65
+Lv.65
+#org @gText_75
+Lv.75
+#org @gText_85
+Lv.85
+#org @gText_High
+High
+#org @gText_Medium
+Medium
+#org @gText_Low
+Low
+#org @gText_Start
+Let's Start
+#org @gText_End
+Bye
+#org @gText_Start_Training
+What kind of training do you want?
+#org @gText_Experience
+Experience
+#org @gText_HP
+HP
+#org @gText_Attack
+Attack
+#org @gText_Defense
+Defense
+#org @gText_Special_Attack
+Special Attack
+#org @gText_Special_Defense
+Special Defence
+#org @gText_Speed
+Speed
+#org @gText_Back
+Back
+#org @gText_ComeBack
+Come see me again if you \nwant to train!
+
+#org @gText_jack_npc_Choice1
+Change a nickname
+
+#org @gText_jack_npc_Choice2
+Remember a move
+
+#org @gText_jack_npc_Choice3
+Forget a move
+
+#org @gText_jack_npc_Choice4
+No thanks
+
+#org @gText_jack_npc_N1
+Got some [GREEN]Mo\emon[BLUE] questions?\nFeel free to ask away.
+
+#org @gText_jack_npc_N2
+Is there anything else I can\ndo for you?
+
+#org @gText_jack_npc_Nr1
+Which [GREEN]Mo\emon[BLUE]'s name would you\nlike to be changed?
+
+#org @gText_jack_npc_Nr4
+[BUFFER1], is it? You would like\nto change this [GREEN]Mo\emon[BLUE]'s name?
+
+#org @gText_jack_npc_Nr2
+Bit early to decide now isn't it?\nCome back after it hatches.
+
+#org @gText_jack_npc_Nr3
+[BUFFER1] came from someone else?\nI'm afraid I'm not able to change\lits name then. My apologies.
+
+#org @gText_jack_npc_Nr5
+Ah, good. Then, what shall the new\nnickname be?
+
+#org @gText_jack_npc_Nr6
+Oh, decided not to change it\nafter all? That's fine then.
+
+#org @gText_jack_npc_Nr7
+Done! From now on, this [GREEN]Mo\emon[BLUE]\nshall be known as [BUFFER1]!
+
+#org @gText_jack_npc_Mt1
+Which [GREEN]Mo\emon[BLUE] needs tutoring?
+
+#org @gText_jack_npc_Mt2
+Um, I can't teach [GREEN]Mo\emon[BLUE] anything\nuntil after they're born.
+
+#org @gText_jack_npc_Mt3
+Sorry.\pIt doesn't appear as if I have a\nmove I can teach that [GREEN]Mo\emon[BLUE].
+
+#org @gText_jack_npc_Mt4
+Which move should I teach?
+
+#org @gText_jack_npc_Md1
+Which [GREEN]Mo\emon[BLUE] should forget a\nmove?
+
+#org @gText_jack_npc_Md4
+Which move should be forgotten?
+
+#org @gText_jack_npc_Md5
+[BUFFER1]'s [BUFFER2]?\nThat move should be forgotten?
+
+#org @gText_jack_npc_Md2
+It doesn't know any moves yet,\nit hasn't even been born.
+
+#org @gText_jack_npc_Md3
+[BUFFER1] seems to know only one\nmove.
+
+#org @gText_jack_npc_Md6
+It worked to perfection!\p[BUFFER1] has forgotten\n[BUFFER2] completely.
+
+#org @gText_jack_npc_End
+Well, come back any time.
+
+#org @gText_AskLevelCaps
+Would you like to enable [RED]Level\nCaps[BLACK]?This can be changed later \pat a Moémon Center.
+
+#org @gText_LevelCapsEnabled
+[RED]Level Caps[BLACK] Enabled
+
+#org @gText_TutorIntro1
+Hello.\pWant me to teach a move to your \n[GREEN]Mo\emon[BLUE]?It will cost you \$3000.
+
+#org @gText_TutorIntro2
+Hello.\pWant me to teach a move to your \n[GREEN]Mo\emon[BLUE]?It will cost you \$5000.
+
+#org @gText_TutorIntro3
+Hello.\pWant me to teach a move to your \n[GREEN]Mo\emon[BLUE]?It will cost you \$7500.
+
+#org @gText_TutorIntro4
+Hello.\pWant me to teach a move to your \n[GREEN]Mo\emon[BLUE]?It will cost you \$10000.
+
+#org @gText_SeeYouAgain
+Come back again!
+
+#org @gText_SelectMove
+Which move do you want\nme to teach?
+
+#org @gText_NotEnoughMoney
+You don't have enough money!
+
+#org @gText_WantAnother
+Oh you want another move?
+
+#org @sNoThanks
+Nevermind
+
+#org @gText_TutorSpecialIntro
+A special move...\pShall I teach your pokemon a\nbattle-combo move?
+
+#org @gText_DontWant
+Come back if you want to learn\na combo move.
+
+#org @gText_Cheat
+Hey bruv,wanna cheat?
+#org @gText_YouSure
+You sure?
+#org @gText_ReallySure
+You really sure?
+#org @gText_OkayThen
+Alright then.
+#org @gText_OpenedPC
+[PLAYER] booted up the PC.
+#org @gText_Bazinga
+Bazinga,no you don't.
+#org @gText_GoodBoy
+Good boy.
+
+#org @gText_DenEmpty
+[BLACK]The den is empty.
+
+#org @gText_JoinedYouTake
+[BLACK][BUFFER][09] [BUFFER][07]\njoined you to take on [BUFFER][08]!
+
+#org @gText_Choose3
+[BLACK]Choose 3 Pok\emon to\nbring into battle.
+
+#org @gText_SelectThree
+[BLACK]Select three Pok\emon to take into\nbattle.
+
+#org @gText_StartRaidBattle
+[BLACK]This strange den exuberates\npowerful energy.\pWould you like to look inside it?
+
+#org @gText_RaidTeamUp
+A powerful wild Pok\emon came\nout!
+
+#org @gText_StartRaidBattle2
+It's an empty den.
+
+#org @gText_EGGMOVETUTOR_1
+I'm the Egg Move Tutor.\pI know every single move that\n[GREEN]Mo\emon[BLUE] learn growing up.
+
+#org @gText_EGGMOVETUTOR_2
+Do you want me to teach a move\nto a [GREEN]Mo\emon[BLUE] of yours?
+
+#org @gText_EGGMOVETUTOR_3
+If your [GREEN]Mo\emon[BLUE] need to learn a\nmove, you know where I am.
+
+#org @gText_EGGMOVETUTOR_4
+Which [GREEN]Mo\emon[BLUE] needs tutoring?
+
+#org @gText_EGGMOVETUTOR_5
+Which move should I teach?
+
+#org @gText_EGGMOVETUTOR_6
+Hunh? There isn't a single move\nthat I can teach an Egg.
+#org @gText_EGGMOVETUTOR_7
+Sorry[.]\pIt doesn't appear as if I have a\nmove I can teach that [GREEN]Mo\emon[BLUE].
+
+#org @gText_WhichAbilityDoISwap
+Which ability do you want me \nto swap?
+#org @gText_ICanChangeAbility
+Hi, I can swap a [GREEN]Mo\emon[BLUE]'s\nability.I'll need a [GREEN]Heart Scale[BLUE]\pthough.How about it?
+#org @gText_Saffron_Nerd2_Hidden
+That [GREEN]Mo\emon[BLUE] has its Hidden\nAbility. You'll have to talk to\lmy other friend here to get that\lswapped.
+#org @gText_SaffronNerd2_NoDiff
+[.]That [GREEN]Mo\emon[BLUE] doesn't have an\nability to swap to. 
+#org @gText_Bye
+Bye then.
+
+
+
+#org @gText_Not_have
+Uh, you don't have a [GREEN]Heart Scale[BLUE].
+#org @gText_Not_have_master
+Uh, you don't have a [GREEN]Master Ball[BLUE].
+#org @gText_Not_have_ultra
+Uh, you don't have a [GREEN]Ultra Ball[BLUE].
+#org @gText_Not_have_great
+Uh, you don't have a [GREEN]Great Ball[BLUE].
+#org @gText_Not_have_poke
+Uh, you don't have a [GREEN]Pok\e Ball[BLUE].
+#org @gText_Not_have_safari
+Uh, you don't have a [GREEN]Safari Ball[BLUE].
+#org @gText_Not_have_net
+Uh, you don't have a [GREEN]Net Ball[BLUE].
+#org @gText_Not_have_dive
+Uh, you don't have a [GREEN]Dive Ball[BLUE].
+#org @gText_Not_have_nest
+Uh, you don't have a [GREEN]Nest Ball[BLUE].
+#org @gText_Not_have_repeat
+Uh, you don't have a [GREEN]Repeat Ball[BLUE].
+#org @gText_Not_have_timer
+Uh, you don't have a [GREEN]Timer Ball[BLUE].
+#org @gText_Not_have_luxury
+Uh, you don't have a [GREEN]Luxury Ball[BLUE].
+#org @gText_Not_have_premier
+Uh, you don't have a [GREEN]Premier Ball[BLUE].
+#org @gText_Not_have_dusk
+Uh, you don't have a [GREEN]Dusk Ball[BLUE].
+#org @gText_Not_have_heal
+Uh, you don't have a [GREEN]Heal Ball[BLUE].
+#org @gText_Not_have_quick
+Uh, you don't have a [GREEN]Quick Ball[BLUE].
+#org @gText_Not_have_cherish
+Uh, you don't have a [GREEN]Cherish Ball[BLUE].
+#org @gText_Not_have_park
+Uh, you don't have a [GREEN]Park Ball[BLUE].
+#org @gText_Not_have_fast
+Uh, you don't have a [GREEN]Fast Ball[BLUE].
+#org @gText_Not_have_level
+Uh, you don't have a [GREEN]Level Ball[BLUE].
+#org @gText_Not_have_lure
+Uh, you don't have a [GREEN]Lure Ball[BLUE].
+#org @gText_Not_have_heavy
+Uh, you don't have a [GREEN]Heavy Ball[BLUE].
+#org @gText_Not_have_love
+Uh, you don't have a [GREEN]Love Ball[BLUE].
+#org @gText_Not_have_friend
+Uh, you don't have a [GREEN]Friend Ball[BLUE].
+#org @gText_Not_have_moon
+Uh, you don't have a [GREEN]Moon Ball[BLUE].
+#org @gText_Not_have_sport
+Uh, you don't have a [GREEN]Sport Ball[BLUE].
+#org @gText_Not_have_beast
+Uh, you don't have a [GREEN]Beast Ball[BLUE].
+#org @gText_Not_have_dream
+Uh, you don't have a [GREEN]Dream Ball[BLUE].
+
+
+
+#org @gText_ZeCook_FirstMsg
+Bonjour! C'est moi, Ze Cook!Vat...\nYou don't speak le francais?\pTr\es banale.Mais ce n'est ne pas \nimportant.\pI can cook up exquisite meals that\ncan strengthen the stats of your \l[GREEN]Mo\emon[BLUE].Magnifique, non?
+#org @gText_ZeCook_Msg
+So vhich [GREEN]Mo\emon[BLUE] shall feast\non my meals?
+#org @gText_ZeCook_HP
+Chansey Omelette (HP)
+#org @gText_ZeCook_Attack
+Take Down Steak (Attack)
+#org @gText_ZeCook_Defense
+Miltank Cheese Pizza (Defense)
+#org @gText_ZeCook_SpA
+Vanillite Parfait (Sp.Attack)
+#org @gText_ZeCook_SpDef
+Whirlpool Sushi (Sp.Defense)
+#org @gText_ZeCook_Speed
+Hoenn Ramen (Speed)
+#org @gText_ZeCook_1
+Zour [BUFFER1][.]\nVhich menu vill it feast on?
+#org @gText_ZeCook_2
+Oh,zou don't want my food?
+#org @gText_ZeCook_ThreeCourse
+Three-Course Meal
+#org @gText_ZeCook_FiveCourse
+Five-Course Meal
+#org @gText_ZeCook_FullCourse
+Full-Course Meal
+#org @gText_ZeCook_Addby
+Vhich course do you want?
+#org @gText_ZeCook_TresBon
+C'est tres bon!Zat will give\n20 points to ze stat you want\pand costs \$19600.D'accord?
+#org @gText_ZeCook_TresMagnifique
+C'est magnifique!! Zat will give\n50 points to ze stat you want\pand costs \$50000.D'accord?
+#org @gText_ZeCook_VAT
+Va.... VAT!? ZA FULL COURSE?!?Mais\nc'est impossible!! Zat costs \$260000.\pZou have zat amount of money?\nZatwill max the stat of\l[BUFFER1].
+#org @gText_ZeCook_By
+Zour [BUFFER1]'s stat has been increased!
+#org @gText_ZeCook_ByMaxed
+Zour [BUFFER1]'s stat has been maxed!
+#org @gText_ZeCook_4
+Is anyone else hungry?
+#org @gText_ZeCook_Poor
+Oh mon dieu!Zou...Zou are poor!\nGet out of my restaurant\lyou charlatan!!
+
+
+
+#org @gText_HappinessMaxer_FirstMsg
+Hello, we offer massaging services\nto tired [GREEN]Mo\emon[BLUE] for \$1500.
+#org @gText_HappinessMaxer_Msg1
+Which [GREEN]Mo\emon[BLUE] needs to relax?
+#org @gText_HappinessMaxer_Msg
+Do you want us to massage your\n[GREEN]Mo\emon[BLUE]?
+#org @gText_HappinessMaxer_Poor
+I am very sorry but you do not seem\nto have enough money.
+#org @gText_HappinessMaxer_Relaxed
+Your [GREEN][BUFFER1][BLUE] is energetic again!
+#org @gText_HappinessMaxer_NotTired
+Oh my! That [GREEN][BUFFER1][BLUE] is not tired at\nall!
+
+
+
+
+#org @sPallet
+Pallet Town
+#org @sViridian
+Viridian City
+#org @sPewter
+Pewter City
+#org @sRoute4
+Route 4
+#org @sCerulean
+Cerulean City
+#org @sVermillion
+Vermillion City
+#org @sRoute10
+Route 10
+#org @sLavender
+Lavender Town
+#org @sCeladon
+Celadon City
+#org @sFuchsia
+Fuchsia City
+#org @sSaffron
+Saffron City
+#org @sCinnabar
+Cinnabar Island
+#org @sIndigoPlateau
+Indigo Plateau
+#org @sOneIsland
+One Island
+#org @sTwoIsland
+Two Island
+#org @sThreeIsland
+Three Island
+#org @sFourIsland
+Four Island
+#org @sFiveIsland
+Five Island
+#org @sSixIsland
+Six Island
+#org @sSevenIsland
+Seven Island

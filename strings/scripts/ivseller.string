@@ -1,0 +1,51 @@
+#org @gText_ivseller_1
+Psst[.] I have a crazy proposition.\pI can max one of your [GREEN]Mo\emon[BLUE]'s\nIVs for \$75000.\pOr I can do a single stat for\n\$15000.\pIt's crazy expensive, but this is\ntechnically illegal!\pHow about it?
+
+#org @gText_ivseller_2
+Boo. You don't have enough money.\pCome back when you got stacks.
+
+#org @gText_ivseller_Op
+Don't you want OP [GREEN]Mo\emon[BLUE]?\pEspecially in a screwed up ROM hack\nlike this?\pYou can't get this anywhere else.
+
+#org @gText_ivseller_3
+Sweet. Who wants it?
+
+#org @gText_ivseller_4
+So, [BUFFER1] will have its IVs\nmaxed. \$75000.
+
+
+#org @gText_ivseller_4_1
+So, [BUFFER1] will have its HP IVs\nmaxed. It currently has [BUFFER2] HP\lIVs. It'll be \$15000.
+
+#org @gText_ivseller_4_2
+So, [BUFFER1] will have its Atk IVs\nmaxed. It currently has [BUFFER2] Atk\lIVs. It'll be \$15000.
+
+#org @gText_ivseller_4_3
+So, [BUFFER1] will have its Def IVs\nmaxed. It currently has [BUFFER2]Def\lIVs. It'll be \$15000.
+
+#org @gText_ivseller_4_4
+So, [BUFFER1] will have its Sp. Atk\nIVs maxed. It currently has [BUFFER2]\lSp. Atk IVs. It'll be \$15000.
+
+#org @gText_ivseller_4_5
+So, [BUFFER1] will have its Sp. Def\nIVs maxed. It currently has [BUFFER2]\lSp. Def IVs. It'll be \$15000.
+
+#org @gText_ivseller_4_6
+So, [BUFFER1] will have its Speed\nIVs maxed. It currently has [BUFFER2]\lSpeed IVs. It'll be \$15000.
+
+#org @gText_ivseller_5
+Is that correct?
+
+#org @gText_ivseller_Wtf
+Yo, I don't operate on eggs.
+
+#org @gText_ivseller_Wait
+[.]
+
+#org @gText_ivseller_Done
+All done. Hope you enjoy pal.
+
+#org @gText_ivseller_Grind
+The grind don't stop, right?
+
+#org @gText_IVPerfecterPreparemsg_1
+Which stat should I perfect? 

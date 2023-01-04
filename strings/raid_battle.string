@@ -5,7 +5,34 @@ Recommended Lvl:
 [DPAD_UP_DOWN]Pick [A_BUTTON]Choose [START_BUTTON]Random [B_BUTTON]Cancel
 
 #org @gText_RaidBattleRules
-Battle ends if:\n4 Pok\emon faint\n10 turns pass
+Battle ends if:\n4 Mo\emon faint\n10 turns pass
 
 #org @gText_RaidBattleChoosePartner
 Available Partners
+
+#org @sTrainerName_Brendan
+Brendan
+
+#org @sTrainerName_Wally
+Wally
+
+#org @sTrainerName_Steven
+Steven
+
+#org @sTrainerName_May
+May
+
+#org @sTrainerName_OldMan
+Old Man
+
+#org @sTrainerName_Ash
+Ash
+
+#org @sTrainerName_Primo
+Primo
+
+#org @sTrainerName_Lyra
+Lyra
+
+#org @sTrainerName_Mamos
+Mamos

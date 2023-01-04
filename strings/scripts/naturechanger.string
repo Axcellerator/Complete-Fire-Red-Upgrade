@@ -1,0 +1,71 @@
+#org @gText_NatureChanger1
+I can change a [GREEN]Mo\emon[BLUE]'s nature\nfor \$2500. Are you interested?
+
+#org @gText_NatureChanger2 
+Which nature would you like? 
+
+#org @gText_NatureChanger3 
+Sure thing!\nAs for payment[.]
+
+#org @gText_NatureChanger4
+Thank you, the nature has been\nchanged!\pI hope to see you again! 
+
+#org @gText_NatureChanger5 
+Hm, that's not enough money.
+
+#org @gText_Adamant
+Adamant [SHRINK][RED]+Atk [BLUE]-SpA
+
+#org @gText_Modest 
+Modest  [SHRINK][RED]+SpA [BLUE]-Atk
+
+#org @gText_Timid 
+Timid    [SHRINK][RED]+Speed [BLUE]-Atk
+
+#org @gText_Jolly 
+Jolly   [SHRINK][RED]+Speed [BLUE]-SpA
+
+#org @gText_Hasty 
+Hasty   [SHRINK][RED]+Speed [BLUE]-Def
+
+#org @gText_Naive 
+Naive   [SHRINK][RED]+Speed [BLUE]-SpD
+
+#org @gText_Mild 
+Mild    [SHRINK][RED]+SpA [BLUE]-Def
+
+#org @gText_Naughty
+Naughty [SHRINK][RED]+Atk [BLUE]-SpD
+
+#org @gText_Rash 
+Rash     [SHRINK][RED]+SpA [BLUE]-SpDef
+
+#org @gText_Lonely 
+Lonely   [SHRINK][RED]+Atk [BLUE]-Def 
+
+#org @gText_Brave 
+Brave    [SHRINK][RED]+Atk [BLUE]-Speed 
+
+#org @gText_Quiet 
+Quiet    [SHRINK][RED]+SpA [BLUE]-Speed 
+
+#org @gText_Calm
+Calm    [SHRINK][RED]+SpD [BLUE]-Atk
+
+#org @gText_Impish
+Impish  [SHRINK][RED]+Def [BLUE]-SpA 
+
+#org @gText_Sassy
+Sassy   [SHRINK][RED]+SpD [BLUE]-Speed
+
+#org @gText_Careful
+Careful [SHRINK][RED]+SpD [BLUE]-SpA
+
+#org @gText_Relaxed
+Relaxed [SHRINK][RED]+Def [BLUE]-Speed
+
+#org @gText_Bold 
+Bold     [SHRINK][RED]+Def [BLUE]-Atk
+
+#org @gText_Exit 
+Exit 
