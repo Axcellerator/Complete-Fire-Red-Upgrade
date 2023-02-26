@@ -18,8 +18,7 @@ EventScript_EVIV_Start:
 	end
 	
 EventScript_EVIV:
-	giveitem 0x2DA 0x1 MSG_OBTAIN
-	callasm 0x08721AC1
+	giveitem 0x2DC 0x1 MSG_OBTAIN
 	end
 	
 EventScript_EVIV_Cancel:
